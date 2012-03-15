@@ -1,0 +1,758 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6525CF8014A26E19003150DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525CF7F14A26E19003150DC /* UIKit.framework */; };
+		6525CF8214A26E19003150DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525CF8114A26E19003150DC /* Foundation.framework */; };
+		6525CF8414A26E19003150DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525CF8314A26E19003150DC /* CoreGraphics.framework */; };
+		6525CF8A14A26E19003150DC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6525CF8814A26E19003150DC /* InfoPlist.strings */; };
+		6525CF8C14A26E19003150DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CF8B14A26E19003150DC /* main.m */; };
+		6525CFC914A26E6B003150DC /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CF9614A26E6B003150DC /* back.png */; };
+		6525CFCA14A26E6B003150DC /* downvote-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CF9714A26E6B003150DC /* downvote-blue.png */; };
+		6525CFCB14A26E6B003150DC /* downvote-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CF9814A26E6B003150DC /* downvote-grey.png */; };
+		6525CFCC14A26E6B003150DC /* HRDCommentArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CF9A14A26E6B003150DC /* HRDCommentArray.m */; };
+		6525CFCF14A26E6B003150DC /* HRDListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CF9F14A26E6B003150DC /* HRDListView.m */; };
+		6525CFD014A26E6B003150DC /* HRDListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFA014A26E6B003150DC /* HRDListView.xib */; };
+		6525CFD114A26E6B003150DC /* HRDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFA214A26E6B003150DC /* HRDLoginViewController.m */; };
+		6525CFD214A26E6B003150DC /* HRDLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFA314A26E6B003150DC /* HRDLoginViewController.xib */; };
+		6525CFD314A26E6B003150DC /* HRDNewSubReddit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFA514A26E6B003150DC /* HRDNewSubReddit.m */; };
+		6525CFD414A26E6B003150DC /* HRDNewSubReddit.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFA614A26E6B003150DC /* HRDNewSubReddit.xib */; };
+		6525CFD514A26E6B003150DC /* HRDTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFA814A26E6B003150DC /* HRDTextField.m */; };
+		6525CFD614A26E6B003150DC /* listView.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFA914A26E6B003150DC /* listView.png */; };
+		6525CFD714A26E6B003150DC /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFAA14A26E6B003150DC /* logo1.png */; };
+		6525CFD814A26E6B003150DC /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFAB14A26E6B003150DC /* next.png */; };
+		6525CFD914A26E6B003150DC /* playpause2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFAC14A26E6B003150DC /* playpause2.png */; };
+		6525CFDA14A26E6B003150DC /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFAD14A26E6B003150DC /* record.png */; };
+		6525CFDB14A26E6B003150DC /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFAE14A26E6B003150DC /* skip.png */; };
+		6525CFDC14A26E6B003150DC /* skipBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFAF14A26E6B003150DC /* skipBack.png */; };
+		6525CFDD14A26E6B003150DC /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFB214A26E6B003150DC /* CDataScanner.m */; };
+		6525CFDE14A26E6B003150DC /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFB514A26E6B003150DC /* CFilteringJSONSerializer.m */; };
+		6525CFDF14A26E6B003150DC /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFB714A26E6B003150DC /* CJSONSerialization.m */; };
+		6525CFE014A26E6B003150DC /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFB914A26E6B003150DC /* CJSONSerializedData.m */; };
+		6525CFE114A26E6B003150DC /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFBC14A26E6B003150DC /* CDataScanner_Extensions.m */; };
+		6525CFE214A26E6B003150DC /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFBE14A26E6B003150DC /* NSDictionary_JSONExtensions.m */; };
+		6525CFE314A26E6B003150DC /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFC114A26E6B003150DC /* CJSONDeserializer.m */; };
+		6525CFE414A26E6B003150DC /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFC314A26E6B003150DC /* CJSONScanner.m */; };
+		6525CFE514A26E6B003150DC /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFC514A26E6B003150DC /* CJSONSerializer.m */; };
+		6525CFE614A26E6B003150DC /* upvote-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFC714A26E6B003150DC /* upvote-grey.png */; };
+		6525CFE714A26E6B003150DC /* upvote-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFC814A26E6B003150DC /* upvote-orange.png */; };
+		6525CFEF14A26E83003150DC /* HRDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFE914A26E83003150DC /* HRDAppDelegate.m */; };
+		6525CFF014A26E83003150DC /* HRDAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFEB14A26E83003150DC /* HRDAudioStreamer.m */; };
+		6525CFF114A26E83003150DC /* HRDParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFED14A26E83003150DC /* HRDParentViewController.m */; };
+		6525CFF214A26E83003150DC /* HRDParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFEE14A26E83003150DC /* HRDParentViewController.xib */; };
+		6525CFF414A26EA4003150DC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525CFF314A26EA4003150DC /* AVFoundation.framework */; };
+		6525D03B14A27514003150DC /* libSoundCloudAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525D00D14A2749C003150DC /* libSoundCloudAPI.a */; };
+		6525D03C14A27525003150DC /* libOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525D03A14A274FD003150DC /* libOAuth2Client.a */; };
+		6525D03D14A2752A003150DC /* libJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525D02C14A274E6003150DC /* libJSONKit.a */; };
+		6525D03E14A27531003150DC /* libOHAttributedLabel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525D02214A274DC003150DC /* libOHAttributedLabel.a */; };
+		6525D03F14A27538003150DC /* libSoundCloudUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525D01714A274C9003150DC /* libSoundCloudUI.a */; };
+		6525D04114A27552003150DC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525D04014A27552003150DC /* QuartzCore.framework */; };
+		6525D04414A27562003150DC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525D04214A27562003150DC /* AddressBook.framework */; };
+		6525D04514A27562003150DC /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525D04314A27562003150DC /* AddressBookUI.framework */; };
+		6525D04814A27574003150DC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525D04614A27574003150DC /* CoreLocation.framework */; };
+		6525D04914A27574003150DC /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525D04714A27574003150DC /* CoreText.framework */; };
+		6525D04B14A2757D003150DC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525D04A14A2757D003150DC /* Security.framework */; };
+		6525D04D14A27624003150DC /* SoundCloud.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6525D04C14A27624003150DC /* SoundCloud.bundle */; };
+		65345A9F1504A2DF00268E57 /* HRDAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 65345A9E1504A2DF00268E57 /* HRDAudioRecorder.m */; };
+		F5E8EB1F150820EE00897848 /* HRDRecordingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E8EB1D150820EE00897848 /* HRDRecordingViewController.m */; };
+		F5E8EB20150820EE00897848 /* HRDRecordingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E8EB1E150820EE00897848 /* HRDRecordingViewController.xib */; };
+		F5E8EB241508213D00897848 /* HRDListenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E8EB221508213D00897848 /* HRDListenViewController.m */; };
+		F5E8EB251508213D00897848 /* HRDListenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E8EB231508213D00897848 /* HRDListenViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6525D00A14A2749C003150DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6525D00214A2749C003150DC /* SoundCloudAPI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 94535F86123FAFDF00BD668A;
+			remoteInfo = SoundCloudAPI.framework;
+		};
+		6525D00C14A2749C003150DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6525D00214A2749C003150DC /* SoundCloudAPI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = SoundCloudAPI;
+		};
+		6525D01614A274C9003150DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6525D00E14A274C8003150DC /* SoundCloudUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6EF8C6113F929D700B20B40;
+			remoteInfo = libSoundCloudUI;
+		};
+		6525D01814A274C9003150DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6525D00E14A274C8003150DC /* SoundCloudUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F62E0CE5148FB27100BE8F14;
+			remoteInfo = SoundCloudUI.framework;
+		};
+		6525D02114A274DC003150DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6525D01A14A274DB003150DC /* OHAttributedLabel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F62728FA148F70DF00314599;
+			remoteInfo = OHAttributedLabel;
+		};
+		6525D02B14A274E6003150DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6525D02314A274E6003150DC /* JSONKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6803523148F6D22008A51BA;
+			remoteInfo = libJSONKit;
+		};
+		6525D02D14A274E6003150DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6525D02314A274E6003150DC /* JSONKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6AE0202148F825C0004909F;
+			remoteInfo = JSONKit.framework;
+		};
+		6525D03714A274FD003150DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6525D02F14A274FC003150DC /* OAuth2Client.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 942FFCD612315E0A00E6C65E;
+			remoteInfo = OAuth2Client.framework;
+		};
+		6525D03914A274FD003150DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6525D02F14A274FC003150DC /* OAuth2Client.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = OAuth2Client;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6525CF7B14A26E19003150DC /* Herddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Herddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6525CF7F14A26E19003150DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6525CF8114A26E19003150DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6525CF8314A26E19003150DC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6525CF8714A26E19003150DC /* Herddit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Herddit-Info.plist"; sourceTree = "<group>"; };
+		6525CF8914A26E19003150DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6525CF8B14A26E19003150DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6525CF8D14A26E19003150DC /* Herddit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Herddit-Prefix.pch"; sourceTree = "<group>"; };
+		6525CF9614A26E6B003150DC /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../back.png; sourceTree = "<group>"; };
+		6525CF9714A26E6B003150DC /* downvote-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "downvote-blue.png"; path = "../downvote-blue.png"; sourceTree = "<group>"; };
+		6525CF9814A26E6B003150DC /* downvote-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "downvote-grey.png"; path = "../downvote-grey.png"; sourceTree = "<group>"; };
+		6525CF9914A26E6B003150DC /* HRDCommentArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDCommentArray.h; path = ../HRDCommentArray.h; sourceTree = "<group>"; };
+		6525CF9A14A26E6B003150DC /* HRDCommentArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDCommentArray.m; path = ../HRDCommentArray.m; sourceTree = "<group>"; };
+		6525CF9E14A26E6B003150DC /* HRDListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDListView.h; path = ../HRDListView.h; sourceTree = "<group>"; };
+		6525CF9F14A26E6B003150DC /* HRDListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDListView.m; path = ../HRDListView.m; sourceTree = "<group>"; };
+		6525CFA014A26E6B003150DC /* HRDListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HRDListView.xib; path = ../HRDListView.xib; sourceTree = "<group>"; };
+		6525CFA114A26E6B003150DC /* HRDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDLoginViewController.h; path = ../HRDLoginViewController.h; sourceTree = "<group>"; };
+		6525CFA214A26E6B003150DC /* HRDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDLoginViewController.m; path = ../HRDLoginViewController.m; sourceTree = "<group>"; };
+		6525CFA314A26E6B003150DC /* HRDLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HRDLoginViewController.xib; path = ../HRDLoginViewController.xib; sourceTree = "<group>"; };
+		6525CFA414A26E6B003150DC /* HRDNewSubReddit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDNewSubReddit.h; path = ../HRDNewSubReddit.h; sourceTree = "<group>"; };
+		6525CFA514A26E6B003150DC /* HRDNewSubReddit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDNewSubReddit.m; path = ../HRDNewSubReddit.m; sourceTree = "<group>"; };
+		6525CFA614A26E6B003150DC /* HRDNewSubReddit.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HRDNewSubReddit.xib; path = ../HRDNewSubReddit.xib; sourceTree = "<group>"; };
+		6525CFA714A26E6B003150DC /* HRDTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDTextField.h; path = ../HRDTextField.h; sourceTree = "<group>"; };
+		6525CFA814A26E6B003150DC /* HRDTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDTextField.m; path = ../HRDTextField.m; sourceTree = "<group>"; };
+		6525CFA914A26E6B003150DC /* listView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = listView.png; path = ../listView.png; sourceTree = "<group>"; };
+		6525CFAA14A26E6B003150DC /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo1.png; path = ../logo1.png; sourceTree = "<group>"; };
+		6525CFAB14A26E6B003150DC /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = next.png; path = ../next.png; sourceTree = "<group>"; };
+		6525CFAC14A26E6B003150DC /* playpause2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playpause2.png; path = ../playpause2.png; sourceTree = "<group>"; };
+		6525CFAD14A26E6B003150DC /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = record.png; path = ../record.png; sourceTree = "<group>"; };
+		6525CFAE14A26E6B003150DC /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skip.png; path = ../skip.png; sourceTree = "<group>"; };
+		6525CFAF14A26E6B003150DC /* skipBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = skipBack.png; path = ../skipBack.png; sourceTree = "<group>"; };
+		6525CFB114A26E6B003150DC /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		6525CFB214A26E6B003150DC /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		6525CFB414A26E6B003150DC /* CFilteringJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFilteringJSONSerializer.h; sourceTree = "<group>"; };
+		6525CFB514A26E6B003150DC /* CFilteringJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFilteringJSONSerializer.m; sourceTree = "<group>"; };
+		6525CFB614A26E6B003150DC /* CJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerialization.h; sourceTree = "<group>"; };
+		6525CFB714A26E6B003150DC /* CJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerialization.m; sourceTree = "<group>"; };
+		6525CFB814A26E6B003150DC /* CJSONSerializedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializedData.h; sourceTree = "<group>"; };
+		6525CFB914A26E6B003150DC /* CJSONSerializedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializedData.m; sourceTree = "<group>"; };
+		6525CFBB14A26E6B003150DC /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		6525CFBC14A26E6B003150DC /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		6525CFBD14A26E6B003150DC /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		6525CFBE14A26E6B003150DC /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		6525CFC014A26E6B003150DC /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		6525CFC114A26E6B003150DC /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		6525CFC214A26E6B003150DC /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		6525CFC314A26E6B003150DC /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		6525CFC414A26E6B003150DC /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		6525CFC514A26E6B003150DC /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		6525CFC614A26E6B003150DC /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		6525CFC714A26E6B003150DC /* upvote-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "upvote-grey.png"; path = "../upvote-grey.png"; sourceTree = "<group>"; };
+		6525CFC814A26E6B003150DC /* upvote-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "upvote-orange.png"; path = "../upvote-orange.png"; sourceTree = "<group>"; };
+		6525CFE814A26E83003150DC /* HRDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDAppDelegate.h; path = ../HRDAppDelegate.h; sourceTree = "<group>"; };
+		6525CFE914A26E83003150DC /* HRDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDAppDelegate.m; path = ../HRDAppDelegate.m; sourceTree = "<group>"; };
+		6525CFEA14A26E83003150DC /* HRDAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDAudioStreamer.h; path = ../HRDAudioStreamer.h; sourceTree = "<group>"; };
+		6525CFEB14A26E83003150DC /* HRDAudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDAudioStreamer.m; path = ../HRDAudioStreamer.m; sourceTree = "<group>"; };
+		6525CFEC14A26E83003150DC /* HRDParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDParentViewController.h; path = ../HRDParentViewController.h; sourceTree = "<group>"; };
+		6525CFED14A26E83003150DC /* HRDParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDParentViewController.m; path = ../HRDParentViewController.m; sourceTree = "<group>"; };
+		6525CFEE14A26E83003150DC /* HRDParentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HRDParentViewController.xib; path = ../HRDParentViewController.xib; sourceTree = "<group>"; };
+		6525CFF314A26EA4003150DC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6525D00214A2749C003150DC /* SoundCloudAPI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SoundCloudAPI.xcodeproj; path = CocoaSoundCloudAPI/SoundCloudAPI.xcodeproj; sourceTree = "<group>"; };
+		6525D00E14A274C8003150DC /* SoundCloudUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SoundCloudUI.xcodeproj; path = CocoaSoundCloudUI/SoundCloudUI.xcodeproj; sourceTree = "<group>"; };
+		6525D01A14A274DB003150DC /* OHAttributedLabel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OHAttributedLabel.xcodeproj; path = OHAttributedLabel/OHAttributedLabel.xcodeproj; sourceTree = "<group>"; };
+		6525D02314A274E6003150DC /* JSONKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSONKit.xcodeproj; path = JSONKit/JSONKit.xcodeproj; sourceTree = "<group>"; };
+		6525D02F14A274FC003150DC /* OAuth2Client.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuth2Client.xcodeproj; path = OAuth2Client/OAuth2Client.xcodeproj; sourceTree = "<group>"; };
+		6525D04014A27552003150DC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6525D04214A27562003150DC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		6525D04314A27562003150DC /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		6525D04614A27574003150DC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6525D04714A27574003150DC /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		6525D04A14A2757D003150DC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6525D04C14A27624003150DC /* SoundCloud.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SoundCloud.bundle; sourceTree = "<group>"; };
+		65345A9D1504A2DF00268E57 /* HRDAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDAudioRecorder.h; sourceTree = "<group>"; };
+		65345A9E1504A2DF00268E57 /* HRDAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDAudioRecorder.m; sourceTree = "<group>"; };
+		F5E8EB1C150820EE00897848 /* HRDRecordingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDRecordingViewController.h; sourceTree = "<group>"; };
+		F5E8EB1D150820EE00897848 /* HRDRecordingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDRecordingViewController.m; sourceTree = "<group>"; };
+		F5E8EB1E150820EE00897848 /* HRDRecordingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRDRecordingViewController.xib; sourceTree = "<group>"; };
+		F5E8EB211508213D00897848 /* HRDListenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDListenViewController.h; sourceTree = "<group>"; };
+		F5E8EB221508213D00897848 /* HRDListenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDListenViewController.m; sourceTree = "<group>"; };
+		F5E8EB231508213D00897848 /* HRDListenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRDListenViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6525CF7814A26E18003150DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6525D04B14A2757D003150DC /* Security.framework in Frameworks */,
+				6525D04814A27574003150DC /* CoreLocation.framework in Frameworks */,
+				6525D04914A27574003150DC /* CoreText.framework in Frameworks */,
+				6525CF8414A26E19003150DC /* CoreGraphics.framework in Frameworks */,
+				6525D04414A27562003150DC /* AddressBook.framework in Frameworks */,
+				6525D04514A27562003150DC /* AddressBookUI.framework in Frameworks */,
+				6525D04114A27552003150DC /* QuartzCore.framework in Frameworks */,
+				6525D03F14A27538003150DC /* libSoundCloudUI.a in Frameworks */,
+				6525D03E14A27531003150DC /* libOHAttributedLabel.a in Frameworks */,
+				6525D03D14A2752A003150DC /* libJSONKit.a in Frameworks */,
+				6525D03C14A27525003150DC /* libOAuth2Client.a in Frameworks */,
+				6525D03B14A27514003150DC /* libSoundCloudAPI.a in Frameworks */,
+				6525CFF414A26EA4003150DC /* AVFoundation.framework in Frameworks */,
+				6525CF8014A26E19003150DC /* UIKit.framework in Frameworks */,
+				6525CF8214A26E19003150DC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6525CF7014A26E18003150DC = {
+			isa = PBXGroup;
+			children = (
+				6525D02F14A274FC003150DC /* OAuth2Client.xcodeproj */,
+				6525D02314A274E6003150DC /* JSONKit.xcodeproj */,
+				6525D01A14A274DB003150DC /* OHAttributedLabel.xcodeproj */,
+				6525D00E14A274C8003150DC /* SoundCloudUI.xcodeproj */,
+				6525D00214A2749C003150DC /* SoundCloudAPI.xcodeproj */,
+				6525CFB014A26E6B003150DC /* Source */,
+				6525CF8514A26E19003150DC /* Herddit */,
+				6525CF7E14A26E19003150DC /* Frameworks */,
+				6525CF7C14A26E19003150DC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6525CF7C14A26E19003150DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6525CF7B14A26E19003150DC /* Herddit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6525CF7E14A26E19003150DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6525D04A14A2757D003150DC /* Security.framework */,
+				6525D04614A27574003150DC /* CoreLocation.framework */,
+				6525D04714A27574003150DC /* CoreText.framework */,
+				6525D04214A27562003150DC /* AddressBook.framework */,
+				6525D04314A27562003150DC /* AddressBookUI.framework */,
+				6525D04014A27552003150DC /* QuartzCore.framework */,
+				6525CFF314A26EA4003150DC /* AVFoundation.framework */,
+				6525CF7F14A26E19003150DC /* UIKit.framework */,
+				6525CF8114A26E19003150DC /* Foundation.framework */,
+				6525CF8314A26E19003150DC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6525CF8514A26E19003150DC /* Herddit */ = {
+			isa = PBXGroup;
+			children = (
+				65345A9C1504A2DF00268E57 /* Recorder Class */,
+				6525D04C14A27624003150DC /* SoundCloud.bundle */,
+				F5E8EB211508213D00897848 /* HRDListenViewController.h */,
+				F5E8EB221508213D00897848 /* HRDListenViewController.m */,
+				F5E8EB231508213D00897848 /* HRDListenViewController.xib */,
+				6525CFEA14A26E83003150DC /* HRDAudioStreamer.h */,
+				6525CFEB14A26E83003150DC /* HRDAudioStreamer.m */,
+				6525CFEC14A26E83003150DC /* HRDParentViewController.h */,
+				6525CFED14A26E83003150DC /* HRDParentViewController.m */,
+				6525CFEE14A26E83003150DC /* HRDParentViewController.xib */,
+				6525CF9614A26E6B003150DC /* back.png */,
+				6525CF9714A26E6B003150DC /* downvote-blue.png */,
+				6525CF9814A26E6B003150DC /* downvote-grey.png */,
+				6525CF9914A26E6B003150DC /* HRDCommentArray.h */,
+				6525CF9A14A26E6B003150DC /* HRDCommentArray.m */,
+				6525CF9E14A26E6B003150DC /* HRDListView.h */,
+				6525CF9F14A26E6B003150DC /* HRDListView.m */,
+				6525CFA014A26E6B003150DC /* HRDListView.xib */,
+				6525CFA114A26E6B003150DC /* HRDLoginViewController.h */,
+				6525CFA214A26E6B003150DC /* HRDLoginViewController.m */,
+				6525CFA314A26E6B003150DC /* HRDLoginViewController.xib */,
+				6525CFA414A26E6B003150DC /* HRDNewSubReddit.h */,
+				6525CFA514A26E6B003150DC /* HRDNewSubReddit.m */,
+				6525CFA614A26E6B003150DC /* HRDNewSubReddit.xib */,
+				6525CFA714A26E6B003150DC /* HRDTextField.h */,
+				6525CFA814A26E6B003150DC /* HRDTextField.m */,
+				6525CFA914A26E6B003150DC /* listView.png */,
+				6525CFAA14A26E6B003150DC /* logo1.png */,
+				6525CFAB14A26E6B003150DC /* next.png */,
+				6525CFAC14A26E6B003150DC /* playpause2.png */,
+				6525CFAD14A26E6B003150DC /* record.png */,
+				6525CFAE14A26E6B003150DC /* skip.png */,
+				6525CFAF14A26E6B003150DC /* skipBack.png */,
+				6525CFC714A26E6B003150DC /* upvote-grey.png */,
+				6525CFC814A26E6B003150DC /* upvote-orange.png */,
+				6525CF8614A26E19003150DC /* Supporting Files */,
+			);
+			path = Herddit;
+			sourceTree = "<group>";
+		};
+		6525CF8614A26E19003150DC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6525CF8714A26E19003150DC /* Herddit-Info.plist */,
+				6525CF8814A26E19003150DC /* InfoPlist.strings */,
+				6525CF8B14A26E19003150DC /* main.m */,
+				6525CF8D14A26E19003150DC /* Herddit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6525CFB014A26E6B003150DC /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				6525CFE814A26E83003150DC /* HRDAppDelegate.h */,
+				6525CFE914A26E83003150DC /* HRDAppDelegate.m */,
+				6525CFB114A26E6B003150DC /* CDataScanner.h */,
+				6525CFB214A26E6B003150DC /* CDataScanner.m */,
+				6525CFB314A26E6B003150DC /* Experimental */,
+				6525CFBA14A26E6B003150DC /* Extensions */,
+				6525CFBF14A26E6B003150DC /* JSON */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		6525CFB314A26E6B003150DC /* Experimental */ = {
+			isa = PBXGroup;
+			children = (
+				6525CFB414A26E6B003150DC /* CFilteringJSONSerializer.h */,
+				6525CFB514A26E6B003150DC /* CFilteringJSONSerializer.m */,
+				6525CFB614A26E6B003150DC /* CJSONSerialization.h */,
+				6525CFB714A26E6B003150DC /* CJSONSerialization.m */,
+				6525CFB814A26E6B003150DC /* CJSONSerializedData.h */,
+				6525CFB914A26E6B003150DC /* CJSONSerializedData.m */,
+			);
+			path = Experimental;
+			sourceTree = "<group>";
+		};
+		6525CFBA14A26E6B003150DC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6525CFBB14A26E6B003150DC /* CDataScanner_Extensions.h */,
+				6525CFBC14A26E6B003150DC /* CDataScanner_Extensions.m */,
+				6525CFBD14A26E6B003150DC /* NSDictionary_JSONExtensions.h */,
+				6525CFBE14A26E6B003150DC /* NSDictionary_JSONExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6525CFBF14A26E6B003150DC /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				6525CFC014A26E6B003150DC /* CJSONDeserializer.h */,
+				6525CFC114A26E6B003150DC /* CJSONDeserializer.m */,
+				6525CFC214A26E6B003150DC /* CJSONScanner.h */,
+				6525CFC314A26E6B003150DC /* CJSONScanner.m */,
+				6525CFC414A26E6B003150DC /* CJSONSerializer.h */,
+				6525CFC514A26E6B003150DC /* CJSONSerializer.m */,
+				6525CFC614A26E6B003150DC /* JSONRepresentation.h */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		6525D00314A2749C003150DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6525D00B14A2749C003150DC /* SoundCloudAPI.framework */,
+				6525D00D14A2749C003150DC /* libSoundCloudAPI.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6525D00F14A274C8003150DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6525D01714A274C9003150DC /* libSoundCloudUI.a */,
+				6525D01914A274C9003150DC /* SoundCloudUI.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6525D01B14A274DB003150DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6525D02214A274DC003150DC /* libOHAttributedLabel.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6525D02414A274E6003150DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6525D02C14A274E6003150DC /* libJSONKit.a */,
+				6525D02E14A274E6003150DC /* JSONKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6525D03014A274FC003150DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6525D03814A274FD003150DC /* OAuth2Client.framework */,
+				6525D03A14A274FD003150DC /* libOAuth2Client.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65345A9C1504A2DF00268E57 /* Recorder Class */ = {
+			isa = PBXGroup;
+			children = (
+				F5E8EB1C150820EE00897848 /* HRDRecordingViewController.h */,
+				F5E8EB1D150820EE00897848 /* HRDRecordingViewController.m */,
+				F5E8EB1E150820EE00897848 /* HRDRecordingViewController.xib */,
+				65345A9D1504A2DF00268E57 /* HRDAudioRecorder.h */,
+				65345A9E1504A2DF00268E57 /* HRDAudioRecorder.m */,
+			);
+			path = "Recorder Class";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6525CF7A14A26E18003150DC /* Herddit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6525CF9314A26E19003150DC /* Build configuration list for PBXNativeTarget "Herddit" */;
+			buildPhases = (
+				6525CF7714A26E18003150DC /* Sources */,
+				6525CF7814A26E18003150DC /* Frameworks */,
+				6525CF7914A26E18003150DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Herddit;
+			productName = Herddit;
+			productReference = 6525CF7B14A26E19003150DC /* Herddit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6525CF7214A26E18003150DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 6525CF7514A26E18003150DC /* Build configuration list for PBXProject "Herddit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6525CF7014A26E18003150DC;
+			productRefGroup = 6525CF7C14A26E19003150DC /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6525D02414A274E6003150DC /* Products */;
+					ProjectRef = 6525D02314A274E6003150DC /* JSONKit.xcodeproj */;
+				},
+				{
+					ProductGroup = 6525D03014A274FC003150DC /* Products */;
+					ProjectRef = 6525D02F14A274FC003150DC /* OAuth2Client.xcodeproj */;
+				},
+				{
+					ProductGroup = 6525D01B14A274DB003150DC /* Products */;
+					ProjectRef = 6525D01A14A274DB003150DC /* OHAttributedLabel.xcodeproj */;
+				},
+				{
+					ProductGroup = 6525D00314A2749C003150DC /* Products */;
+					ProjectRef = 6525D00214A2749C003150DC /* SoundCloudAPI.xcodeproj */;
+				},
+				{
+					ProductGroup = 6525D00F14A274C8003150DC /* Products */;
+					ProjectRef = 6525D00E14A274C8003150DC /* SoundCloudUI.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				6525CF7A14A26E18003150DC /* Herddit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6525D00B14A2749C003150DC /* SoundCloudAPI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SoundCloudAPI.framework;
+			remoteRef = 6525D00A14A2749C003150DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6525D00D14A2749C003150DC /* libSoundCloudAPI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSoundCloudAPI.a;
+			remoteRef = 6525D00C14A2749C003150DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6525D01714A274C9003150DC /* libSoundCloudUI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSoundCloudUI.a;
+			remoteRef = 6525D01614A274C9003150DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6525D01914A274C9003150DC /* SoundCloudUI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SoundCloudUI.framework;
+			remoteRef = 6525D01814A274C9003150DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6525D02214A274DC003150DC /* libOHAttributedLabel.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOHAttributedLabel.a;
+			remoteRef = 6525D02114A274DC003150DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6525D02C14A274E6003150DC /* libJSONKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJSONKit.a;
+			remoteRef = 6525D02B14A274E6003150DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6525D02E14A274E6003150DC /* JSONKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JSONKit.framework;
+			remoteRef = 6525D02D14A274E6003150DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6525D03814A274FD003150DC /* OAuth2Client.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuth2Client.framework;
+			remoteRef = 6525D03714A274FD003150DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6525D03A14A274FD003150DC /* libOAuth2Client.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOAuth2Client.a;
+			remoteRef = 6525D03914A274FD003150DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6525CF7914A26E18003150DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6525CF8A14A26E19003150DC /* InfoPlist.strings in Resources */,
+				6525CFC914A26E6B003150DC /* back.png in Resources */,
+				6525CFCA14A26E6B003150DC /* downvote-blue.png in Resources */,
+				6525CFCB14A26E6B003150DC /* downvote-grey.png in Resources */,
+				6525CFD014A26E6B003150DC /* HRDListView.xib in Resources */,
+				6525CFD214A26E6B003150DC /* HRDLoginViewController.xib in Resources */,
+				6525CFD414A26E6B003150DC /* HRDNewSubReddit.xib in Resources */,
+				6525CFD614A26E6B003150DC /* listView.png in Resources */,
+				6525CFD714A26E6B003150DC /* logo1.png in Resources */,
+				6525CFD814A26E6B003150DC /* next.png in Resources */,
+				6525CFD914A26E6B003150DC /* playpause2.png in Resources */,
+				6525CFDA14A26E6B003150DC /* record.png in Resources */,
+				6525CFDB14A26E6B003150DC /* skip.png in Resources */,
+				6525CFDC14A26E6B003150DC /* skipBack.png in Resources */,
+				6525CFE614A26E6B003150DC /* upvote-grey.png in Resources */,
+				6525CFE714A26E6B003150DC /* upvote-orange.png in Resources */,
+				6525CFF214A26E83003150DC /* HRDParentViewController.xib in Resources */,
+				6525D04D14A27624003150DC /* SoundCloud.bundle in Resources */,
+				F5E8EB20150820EE00897848 /* HRDRecordingViewController.xib in Resources */,
+				F5E8EB251508213D00897848 /* HRDListenViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6525CF7714A26E18003150DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6525CF8C14A26E19003150DC /* main.m in Sources */,
+				6525CFCC14A26E6B003150DC /* HRDCommentArray.m in Sources */,
+				6525CFCF14A26E6B003150DC /* HRDListView.m in Sources */,
+				6525CFD114A26E6B003150DC /* HRDLoginViewController.m in Sources */,
+				6525CFD314A26E6B003150DC /* HRDNewSubReddit.m in Sources */,
+				6525CFD514A26E6B003150DC /* HRDTextField.m in Sources */,
+				6525CFDD14A26E6B003150DC /* CDataScanner.m in Sources */,
+				6525CFDE14A26E6B003150DC /* CFilteringJSONSerializer.m in Sources */,
+				6525CFDF14A26E6B003150DC /* CJSONSerialization.m in Sources */,
+				6525CFE014A26E6B003150DC /* CJSONSerializedData.m in Sources */,
+				6525CFE114A26E6B003150DC /* CDataScanner_Extensions.m in Sources */,
+				6525CFE214A26E6B003150DC /* NSDictionary_JSONExtensions.m in Sources */,
+				6525CFE314A26E6B003150DC /* CJSONDeserializer.m in Sources */,
+				6525CFE414A26E6B003150DC /* CJSONScanner.m in Sources */,
+				6525CFE514A26E6B003150DC /* CJSONSerializer.m in Sources */,
+				6525CFEF14A26E83003150DC /* HRDAppDelegate.m in Sources */,
+				6525CFF014A26E83003150DC /* HRDAudioStreamer.m in Sources */,
+				6525CFF114A26E83003150DC /* HRDParentViewController.m in Sources */,
+				65345A9F1504A2DF00268E57 /* HRDAudioRecorder.m in Sources */,
+				F5E8EB1F150820EE00897848 /* HRDRecordingViewController.m in Sources */,
+				F5E8EB241508213D00897848 /* HRDListenViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6525CF8814A26E19003150DC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6525CF8914A26E19003150DC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6525CF9114A26E19003150DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../**";
+				INFOPLIST_FILE = CFBundleURLTypes;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6525CF9214A26E19003150DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../**";
+				INFOPLIST_FILE = CFBundleURLTypes;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6525CF9414A26E19003150DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daniel Finlay (K67G9FXQH6)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Herddit/Herddit-Prefix.pch";
+				INFOPLIST_FILE = "Herddit/Herddit-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "BA47FDB7-93A7-4BE5-98CD-5D12764BC880";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6525CF9514A26E19003150DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daniel Finlay (K67G9FXQH6)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Herddit/Herddit-Prefix.pch";
+				INFOPLIST_FILE = "Herddit/Herddit-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "BA47FDB7-93A7-4BE5-98CD-5D12764BC880";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6525CF7514A26E18003150DC /* Build configuration list for PBXProject "Herddit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6525CF9114A26E19003150DC /* Debug */,
+				6525CF9214A26E19003150DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6525CF9314A26E19003150DC /* Build configuration list for PBXNativeTarget "Herddit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6525CF9414A26E19003150DC /* Debug */,
+				6525CF9514A26E19003150DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6525CF7214A26E18003150DC /* Project object */;
+}

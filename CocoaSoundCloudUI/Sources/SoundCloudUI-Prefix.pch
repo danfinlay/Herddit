@@ -1,0 +1,13 @@
+//
+// Prefix header for all source files of the 'SoundCloudUI' target in the 'SoundCloudUI' project
+//
+
+#import <TargetConditionals.h>
+
+#ifdef __OBJC__
+#if TARGET_OS_IPHONE
+#import <UIKit/UIKit.h>
+#else
+#import <Cocoa/Cocoa.h>
+#endif
+#endif

@@ -1,0 +1,372 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F6803527148F6D22008A51BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6803526148F6D22008A51BA /* Foundation.framework */; };
+		F6AE0204148F825C0004909F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6AE0203148F825C0004909F /* Cocoa.framework */; };
+		F6AE0218148F82FC0004909F /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F6AE0216148F82FC0004909F /* JSONKit.h */; };
+		F6AE0219148F82FC0004909F /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F6AE0216148F82FC0004909F /* JSONKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6AE021A148F82FC0004909F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AE0217148F82FC0004909F /* JSONKit.m */; };
+		F6AE021B148F82FC0004909F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AE0217148F82FC0004909F /* JSONKit.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F6803523148F6D22008A51BA /* libJSONKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJSONKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6803526148F6D22008A51BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F680352A148F6D22008A51BA /* JSONKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSONKit-Prefix.pch"; sourceTree = "<group>"; };
+		F6AE0202148F825C0004909F /* JSONKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6AE0203148F825C0004909F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		F6AE0206148F825C0004909F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		F6AE0207148F825C0004909F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F6AE0208148F825C0004909F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F6AE020B148F825C0004909F /* JSONKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JSONKit-Info.plist"; sourceTree = "<group>"; };
+		F6AE0216148F82FC0004909F /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		F6AE0217148F82FC0004909F /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F6803520148F6D22008A51BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6803527148F6D22008A51BA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6AE01FE148F825C0004909F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6AE0204148F825C0004909F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F6803518148F6D22008A51BA = {
+			isa = PBXGroup;
+			children = (
+				F6E683AE148F7B9F00E01E97 /* JSONKit */,
+				F6803525148F6D22008A51BA /* Frameworks */,
+				F6803524148F6D22008A51BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F6803524148F6D22008A51BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F6803523148F6D22008A51BA /* libJSONKit.a */,
+				F6AE0202148F825C0004909F /* JSONKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F6803525148F6D22008A51BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6803526148F6D22008A51BA /* Foundation.framework */,
+				F6AE0203148F825C0004909F /* Cocoa.framework */,
+				F6AE0205148F825C0004909F /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6803529148F6D22008A51BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6AE020B148F825C0004909F /* JSONKit-Info.plist */,
+				F680352A148F6D22008A51BA /* JSONKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F6AE0205148F825C0004909F /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6AE0206148F825C0004909F /* AppKit.framework */,
+				F6AE0207148F825C0004909F /* CoreData.framework */,
+				F6AE0208148F825C0004909F /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		F6E683AE148F7B9F00E01E97 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				F6AE0216148F82FC0004909F /* JSONKit.h */,
+				F6AE0217148F82FC0004909F /* JSONKit.m */,
+				F6803529148F6D22008A51BA /* Supporting Files */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F6803521148F6D22008A51BA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6AE0218148F82FC0004909F /* JSONKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6AE01FF148F825C0004909F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6AE0219148F82FC0004909F /* JSONKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F6803522148F6D22008A51BA /* libJSONKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6803530148F6D22008A51BA /* Build configuration list for PBXNativeTarget "libJSONKit" */;
+			buildPhases = (
+				F680351F148F6D22008A51BA /* Sources */,
+				F6803520148F6D22008A51BA /* Frameworks */,
+				F6803521148F6D22008A51BA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libJSONKit;
+			productName = JSONKit;
+			productReference = F6803523148F6D22008A51BA /* libJSONKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F6AE0201148F825C0004909F /* JSONKit.framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6AE0213148F825C0004909F /* Build configuration list for PBXNativeTarget "JSONKit.framework" */;
+			buildPhases = (
+				F6AE01FD148F825C0004909F /* Sources */,
+				F6AE01FE148F825C0004909F /* Frameworks */,
+				F6AE01FF148F825C0004909F /* Headers */,
+				F6AE0200148F825C0004909F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSONKit.framework;
+			productName = JSONKit;
+			productReference = F6AE0202148F825C0004909F /* JSONKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F680351A148F6D22008A51BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = nxtbgthng;
+			};
+			buildConfigurationList = F680351D148F6D22008A51BA /* Build configuration list for PBXProject "JSONKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F6803518148F6D22008A51BA;
+			productRefGroup = F6803524148F6D22008A51BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F6803522148F6D22008A51BA /* libJSONKit */,
+				F6AE0201148F825C0004909F /* JSONKit.framework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F6AE0200148F825C0004909F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F680351F148F6D22008A51BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6AE021A148F82FC0004909F /* JSONKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6AE01FD148F825C0004909F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6AE021B148F82FC0004909F /* JSONKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F680352E148F6D22008A51BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F680352F148F6D22008A51BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F6803531148F6D22008A51BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/JSONKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSONKit/JSONKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = JSONKit;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		F6803532148F6D22008A51BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/JSONKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSONKit/JSONKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = JSONKit;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		F6AE0214148F825C0004909F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSONKit/JSONKit-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "JSONKit/JSONKit-Info.plist";
+				LD_DYLIB_INSTALL_NAME = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = JSONKit;
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		F6AE0215148F825C0004909F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSONKit/JSONKit-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "JSONKit/JSONKit-Info.plist";
+				LD_DYLIB_INSTALL_NAME = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = JSONKit;
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F680351D148F6D22008A51BA /* Build configuration list for PBXProject "JSONKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F680352E148F6D22008A51BA /* Debug */,
+				F680352F148F6D22008A51BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6803530148F6D22008A51BA /* Build configuration list for PBXNativeTarget "libJSONKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6803531148F6D22008A51BA /* Debug */,
+				F6803532148F6D22008A51BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6AE0213148F825C0004909F /* Build configuration list for PBXNativeTarget "JSONKit.framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6AE0214148F825C0004909F /* Debug */,
+				F6AE0215148F825C0004909F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F680351A148F6D22008A51BA /* Project object */;
+}
