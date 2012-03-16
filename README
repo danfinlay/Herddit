@@ -1,13 +1,4 @@
-Welcome to Herddit, an audio version of the Reddit comment system.  To introduce you as thoroughly as possible, I will describe the application from three perspectives:  First, from an ideal usage perspective, then an overview of the current codebase, then a list of necessary additions.
-
-=======
-
-Welcome to Herddit, an audio version of the Reddit comment system.  
-To introduce you as thoroughly as possible, I will describe the 
-application from three perspectives:  First, from an ideal usage 
-perspective, then an overview of the current codebase, then a road map
-for our continued development.
-
+Welcome to Herddit, an audio version of the Reddit comment system!
 
 ----------TABLE OF CONTENTS------------
 
