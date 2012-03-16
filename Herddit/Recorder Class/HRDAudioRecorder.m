@@ -27,14 +27,22 @@
 	
 	NSMutableDictionary *settings = [[NSMutableDictionary alloc] init];
 	
-	[settings setObject:[NSNumber numberWithInt:kAudioFormatAppleIMA4] forKey:@"AVFormatIDKey"];
+    
+	[settings setValue:[NSNumber numberWithFloat:8000.0] forKey:AVSampleRateKey];
+	[settings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey]; 
+	[settings setValue:[NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey];
+	[settings setObject:[NSNumber numberWithInt:AVAudioQualityLow] forKey: AVEncoderAudioQualityKey]; 
+	[settings setValue:[NSNumber numberWithInt: 8000] forKey:AVEncoderBitRateKey];
+    
+    //Old settings Dict:
+/**	[settings setObject:[NSNumber numberWithInt:kAudioFormatAppleIMA4] forKey:@"AVFormatIDKey"];
 	[settings setObject: [NSNumber numberWithFloat:44100.0] forKey:@"AVSampleRateKey"];
 	[settings setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
 	
 	//Unneccessary encoder settings:
 	[settings setValue:[NSNumber numberWithInt:AVAudioQualityMin] forKey:AVEncoderAudioQualityKey]; 
 	[settings setValue:[NSNumber numberWithInt:96] forKey:AVEncoderBitRateKey]; 
-	[settings setValue:[NSNumber numberWithInt:16] forKey:AVEncoderBitDepthHintKey];
+	[settings setValue:[NSNumber numberWithInt:16] forKey:AVEncoderBitDepthHintKey];**/
 	
 	//Establishing file path:
 	//NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
