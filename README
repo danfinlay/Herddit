@@ -1,0 +1,46 @@
+Welcome to Herddit, an audio version of the Reddit comment system.  To introduce you as thoroughly as possible, I will describe the application from three perspectives:  First, from an ideal usage perspective, then an overview of the current codebase, then a list of necessary additions.
+
+=======
+
+Welcome to Herddit, an audio version of the Reddit comment system.  
+To introduce you as thoroughly as possible, I will describe the 
+application from three perspectives:  First, from an ideal usage 
+perspective, then an overview of the current codebase, then a road map
+for our continued development.
+
+
+----------TABLE OF CONTENTS------------
+
+1. The User Experience
+2. The Current Design
+3. The Next Steps
+
+----------1. THE USER EXPERIENCE------------
+
+The basic use of Herddit could be very similar to the experience of listening to talk radio:  When Herddit is booted up, a "station" (or sub-herddit) is selected, and then the audio begins playing.  The first thing heard is a highly-ranked "topic post", which is the first statement in a comment tree.  After the topic post is heard, the top-voted comment in response to that topic is heard.  Each reply to each reply is played in order, much like reading comments straight down the page on a Reddit comment page.  Naturally, the user has the ability to up or down vote anything that is heard.
+
+At any time, the user has the option to either skip to the next topic, which should be self explanatory, or skipping the current comment branch.  For example, if this skip is pressed on the top rated reply to a given topic post, Herddit would begin playing the next highest rated reply to that topic post.  If this skip is pressed on a reply to the top-rated comment, Herddit will continue to the next reply to the top-rated comment.  This skip button essentially simulates the "collapse" button on every comment on a reddit reply page.
+
+In addition to skipping comments and topics, the user has the option of recording a reply.  Upon clicking record, they are asked whether they intended to reply to the comment currently playing, or the one that most recently ended, or a new topic altogether, and then the user is taken to a recording screen.  That page records and uploads their audio comment, so that other users can hear, vote on, and reply to their comment as well.
+
+Hopefully this is a sufficient description of the experience vision to clarify the project's current objective.
+
+----------2. THE CURRENT DESIGN------------
+
+So far I've begun writing this app in XCode 4.2 with ARC, and I've got it logging into Reddit and storing session info within NSUserDefaults.
+
+The app begins running in the App Delegate, which calls a NSNavigationController subclass of mine called HRDParentViewController.  This class then calls the HRDLoginViewController, which currently only covers logging into Reddit, not SoundCloud, which I suspect will be our best audio comment hosting method.
+
+I have a screen that allows users to browse sub-herddits and subscribe to them (HRDListView), although currently have no methods to create new sub-herddits or discover them.
+
+The current listening interface, represented by HRDListenViewController, is a huge mess and embarrassment, but for the time being it is properly parsing and retrieving data from reddit, so it's enough for a "proof of concept" that I'd like to create before the fine tuning.  However, while parsing reddit's .json data in the background, this class is silent, because I wanted to get recording working, so we have something to listen to, before we try to listen.
+
+Right now clicking the record button on the Listen View takes you to the HRDRecordingViewController, which is a very simple interface but both records, and currently uploads to soundcloud.  My next step will be posting the mp3 stream link to Reddit, as the proper type of post for the button pressed.
+
+----------3. THE NEXT STEPS------------
+
+As I'd mentioned, I need to complete the posting of mp3 stream links to reddit.
+
+After that, we'll want to get mp3 streaming working properly in the HRDListenViewController.
+
+The next major step (if the last step didn't require it) will be to clean up and refine the HRDListenViewController so that it "plays nicer" with the next-gen UI that's being designed by a very talented young man who found us on Reddit by the name Francois Ri.  His interface is streets ahead of the one I'm initially building, and mine in turn is a proof of concept of what this app hopes to eventually be.
