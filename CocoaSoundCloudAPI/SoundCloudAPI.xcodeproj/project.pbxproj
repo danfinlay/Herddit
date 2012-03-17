@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		659553C6151474E900C6FC98 /* HRDComment.h in Headers */ = {isa = PBXBuildFile; fileRef = 659553C4151474E900C6FC98 /* HRDComment.h */; };
+		659553C7151474E900C6FC98 /* HRDComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 659553C5151474E900C6FC98 /* HRDComment.m */; };
 		9429A5E0122659D500D31807 /* SCAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 9429A5D2122659D500D31807 /* SCAPI.h */; settings = {ATTRIBUTES = (); }; };
 		94535FA7123FB33500BD668A /* SCAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 9429A5D2122659D500D31807 /* SCAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94535FAE123FB33500BD668A /* SoundCloudAPI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* SoundCloudAPI_Prefix.pch */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		659553C4151474E900C6FC98 /* HRDComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDComment.h; path = "../Herddit/Listening Assistants/HRDComment.h"; sourceTree = "<group>"; };
+		659553C5151474E900C6FC98 /* HRDComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDComment.m; path = "../Herddit/Listening Assistants/HRDComment.m"; sourceTree = "<group>"; };
 		9429A5D2122659D500D31807 /* SCAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAPI.h; sourceTree = "<group>"; };
 		94535F86123FAFDF00BD668A /* SoundCloudAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SoundCloudAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94535F87123FAFDF00BD668A /* SoundCloudAPI.framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SoundCloudAPI.framework-Info.plist"; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 		0867D691FE84028FC02AAC07 /* SoundCloudAPI */ = {
 			isa = PBXGroup;
 			children = (
+				659553C4151474E900C6FC98 /* HRDComment.h */,
+				659553C5151474E900C6FC98 /* HRDComment.m */,
 				08FB77AEFE84172EC02AAC07 /* Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
@@ -200,6 +206,7 @@
 				F6E88D2513D41F8A008B9CD5 /* SCConstants.h in Headers */,
 				F6E88D2C13D43A74008B9CD5 /* SCAccount+Private.h in Headers */,
 				F6525B7D13D5B34A00ACAE8F /* SCSoundCloud+Private.h in Headers */,
+				659553C6151474E900C6FC98 /* HRDComment.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +313,7 @@
 				F6E88D2713D41F8A008B9CD5 /* SCConstants.m in Sources */,
 				F6E88D3113D43B67008B9CD5 /* SCAccount+Private.m in Sources */,
 				F6525B7F13D5B34A00ACAE8F /* SCSoundCloud+Private.m in Sources */,
+				659553C7151474E900C6FC98 /* HRDComment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

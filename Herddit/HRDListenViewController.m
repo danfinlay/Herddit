@@ -136,7 +136,7 @@
 	NSString *author = [currentDict valueForKey:@"author"];
 	authorData.text = author;
 	
-	NSMutableString *subReddit = [[NSMutableString alloc] initWithString:@"/r/"];
+	subReddit = [[NSMutableString alloc] init];
 	[subReddit appendString: [currentDict valueForKey:@"subreddit"]];
 	hrdTitle.text = subReddit;
 	
@@ -200,7 +200,7 @@
 	NSString *author = [[[[[outData valueForKey:@"data"] valueForKey:@"children"] objectAtIndex:postNumber] valueForKey:@"data"] valueForKey:@"author"];
 	authorData.text = author;
 	
-	NSMutableString *subReddit = [[NSMutableString alloc] initWithString:@"/r/"];
+	subReddit = [[NSMutableString alloc] init];
 	[subReddit appendString: [[[[[outData valueForKey:@"data"] valueForKey:@"children"] objectAtIndex:postNumber] valueForKey:@"data"] valueForKey:@"subreddit"]];
 	hrdTitle.text = subReddit;
 	
@@ -521,6 +521,7 @@
 //It does not yet differentiate for whether this is a new post, a reply to previous, or reply to current.
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
 	HRDRecordingViewController *recordingView = [[HRDRecordingViewController alloc] init];
+	[recordingView newPostTo:subReddit];
     [[self navigationController] pushViewController:recordingView animated:YES];
 }
 
@@ -545,9 +546,9 @@
 -(void)mustLoginAlert{
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not logged in." 
 		message:@"You must be logged in to do that." 
-												   delegate:nil 
-										  cancelButtonTitle:@"OK"
-										  otherButtonTitles:nil];
+								delegate:nil 
+								cancelButtonTitle:@"OK"
+								otherButtonTitles:nil];
 	[alert show];
 }
 

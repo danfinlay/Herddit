@@ -105,7 +105,7 @@
                                [trackInfo valueForKey:@"download_url"]];
                 
                 NSLog(@"Stream URL: %@, Download URL: %@", streamURL, downloadURL);
-                                                                    
+                [self postRecording:streamURL];                                                    
             }
             }];
     /**
@@ -130,8 +130,34 @@
     [recorder stopRecording];
 }
 
--(void)replyTo:(NSString *)fullName{
+-(void)setReplyTo:(NSString *)fullName{
     replyTo = fullName;
-    NSLog(@"Recording view replying to: %@", fullName);
+    NSLog(@"Recording view replying to: %@", replyTo);
 }
+-(void)setSubRedditId:(NSString *)subRedditId{
+	sub_id = subRedditId;
+	NSLog(@"Subreddit ID posting to: %@", sub_id);
+}
+-(void)setModhash:(NSString*)mod{
+	modhash = mod;
+}
+-(void)postRecording:(NSString *)stream_url{
+	
+	redditPoster = [[HRDRedditPoster alloc] init];
+	[redditPoster setModhash:modhash];
+	
+	//If there is no reply string, this is a new post, and so post it:
+	if (replyTo == nil){
+		[redditPoster newPostTo:subReddit_name];
+		[redditPoster post:stream_url toSub:sub_id];
+	}else{	
+		//Otherwise this is a reply, so post it:
+		[redditPoster reply:stream_url toPost:replyTo];
+	}
+	
+}
+-(void)newPostTo:(NSString *)subReddit{
+	subReddit_name = subReddit;
+}
+
 @end

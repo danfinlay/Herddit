@@ -11,19 +11,27 @@
 #import "HRDCommentArray.h"
 #import <AVFoundation/AVFoundation.h>
 #import "HRDRecordingViewController.h"
+#import "HRDTopicArray.h"
 
 @interface HRDListenViewController : UIViewController <NSURLConnectionDelegate, UIActionSheetDelegate>
 {
 	//If this subreddit is nil, we load "frontpage"
 	//(Doesn't yet exist, just loads HRDreddit by default.)
 	NSString *currentSubreddit;
+	NSString *subReddit_id;
 	
 	//This is where received xml data goes:
 	NSMutableData *receivedData;
-	
-	NSMutableData *outData;
 	NSURLConnection *connection;
+	
+	HRDTopicArray *topicArray;
+	
+	//Outdata is the result of parsing receivedData w/
+	//CJSON Deserializer.
+	NSMutableData *outData;
+	
 	NSString *sessionCookie;
+	NSMutableString *subReddit;
 	
 	//This helps the un-voting clicks work properly.
 	BOOL upvoted;

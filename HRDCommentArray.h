@@ -7,15 +7,11 @@
 //
 
 
-//A new comment array represents a comment, and the replies to it.
-
-//Each new comment array has all the relevant info about itself in its dataDict, whose keys are straight off reddit, but useful to me are:
-//body, downs, author, link_id (which is the name), parent_id, likes.
-
-//For replies, I've made an easier to access array of additional HRDCommentArray objects, in the main array (this is a subclass of NSMutableArray)
+//As of version 1.1, this array does not represent a comment, but instead is used to fetch the comment JSON, and then return it to be parsed by a topic object.
 
 #import <Foundation/Foundation.h>
 #import "CJSONDeserializer.h"
+#import "HRDComment.h"
 
 @interface HRDCommentArray : NSObject<NSURLConnectionDelegate>{
 	id delegate;

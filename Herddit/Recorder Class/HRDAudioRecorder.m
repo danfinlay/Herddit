@@ -27,19 +27,33 @@
 	
 	NSMutableDictionary *settings = [[NSMutableDictionary alloc] init];
 	
-	[settings setObject:[NSNumber numberWithInt:kAudioFormatAppleIMA4] forKey:@"AVFormatIDKey"];
-	[settings setObject: [NSNumber numberWithFloat:44100.0] forKey:@"AVSampleRateKey"];
-	[settings setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
+	/**
+	 [settings setObject:[NSNumber numberWithInt:kAudioFormatAppleIMA4] forKey:@"AVFormatIDKey"];
+	 [settings setObject: [NSNumber numberWithFloat:44100.0] forKey:@"AVSampleRateKey"];
+	 [settings setValue:[NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey];
+	 
+	 //Unneccessary encoder settings:
+	 [settings setValue:[NSNumber numberWithInt:AVAudioQualityMin] forKey:AVEncoderAudioQualityKey]; 
+	 [settings setValue:[NSNumber numberWithInt:96] forKey:AVEncoderBitRateKey]; 
+	 [settings setValue:[NSNumber numberWithInt:16] forKey:AVEncoderBitDepthHintKey];
+	 **/
 	
-	//Unneccessary encoder settings:
+	
+	[settings setValue:[NSNumber numberWithFloat:8000.0] forKey:AVSampleRateKey];
+	[settings setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey]; 
+	[settings setValue:[NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey];
+	[settings setObject:[NSNumber numberWithInt:AVAudioQualityLow] forKey: AVEncoderAudioQualityKey]; 
+	[settings setValue:[NSNumber numberWithInt: 8000] forKey:AVEncoderBitRateKey];
+	
+	/**Unneccessary encoder settings:
 	[settings setValue:[NSNumber numberWithInt:AVAudioQualityMin] forKey:AVEncoderAudioQualityKey]; 
 	[settings setValue:[NSNumber numberWithInt:96] forKey:AVEncoderBitRateKey]; 
-	[settings setValue:[NSNumber numberWithInt:16] forKey:AVEncoderBitDepthHintKey];
+	[settings setValue:[NSNumber numberWithInt:16] forKey:AVEncoderBitDepthHintKey];**/
 	
 	//Establishing file path:
 	//NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 	
-	url = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent: [NSString stringWithFormat: @"%.0f.%@", [NSDate timeIntervalSinceReferenceDate] * 1000.0, @"caf"]]];
+	url = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent: [NSString stringWithFormat: @"%.0f.%@", [NSDate timeIntervalSinceReferenceDate] * 1000.0, @"aac"]]];
 	NSLog(@"Using File called: %@",url);
 				
 recorder = [[ AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
@@ -78,6 +92,7 @@ recorder = [[ AVAudioRecorder alloc] initWithURL:url settings:settings error:&er
 }
 -(void)upload{
 		NSLog(@"HRDAudioRecorder received upload.");
+	//This is the method to POST the soundcloud stream to 
 	
 }
 

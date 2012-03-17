@@ -9,12 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "SCUI.h"
 #import "HRDAudioRecorder.h"
+#import "HRDRedditPoster.h"
 
 @interface HRDRecordingViewController : UIViewController{
     
     HRDAudioRecorder *recorder;
 
     NSString *replyTo;
+	NSString *sub_id;
+	HRDRedditPoster *redditPoster;
+	NSString *modhash;
+	NSString *subReddit_name;
     
     BOOL recording;
     BOOL recorded;
@@ -30,7 +35,11 @@
 - (IBAction)playButtonPressed:(id)sender;
 - (IBAction)postButtonPressed:(id)sender;
 - (IBAction)stopRecordingPressed:(id)sender;
--(void)replyTo:(NSString *)fullName;
+-(void)newPostTo:(NSString *)subReddit;
+-(void)setReplyTo:(NSString *)fullName;
+-(void)setSubRedditId:(NSString *)subRedditId;
+-(void)postRecording:(NSString *)stream_url;
+-(void)setModhash:(NSString*)mod;
 
 @property (weak, nonatomic) IBOutlet UIButton *stopRecordingButton;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;

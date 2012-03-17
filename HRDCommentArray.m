@@ -70,7 +70,15 @@
 	if (outData == nil){
 		return nil;
 	}else{
-		return outData;
+		NSMutableArray *comments = [[NSMutableArray alloc] init];
+		
+		for (int i = 1; i < [outData count]; i++){
+			NSDictionary *relevantData = [outData objectAtIndex:i];
+			HRDComment *newComment = [[HRDComment alloc] initWithData:relevantData];
+			[comments addObject:newComment];
+		}
+		
+		return comments;
 	}
 }
 
