@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "HRDCommentArray.h"
 #import "HRDBareComment.h"
+@class HRDCommentArray;
 
 @interface HRDTopic : NSObject{
 	
 	//The raw JSON returned by reddit of this topic's page:
 	NSDictionary *dataDict;
+	HRDCommentArray *commentFetcher;
 	
 	//My own extracted details from the reddit's JSON info, to be used as synthetic properties.
 	NSString *title;

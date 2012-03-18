@@ -9,7 +9,7 @@
 #import "HRDCommentArray.h"
 
 @implementation HRDCommentArray
-@synthesize dataDict;
+@synthesize dataDict, comments;
 
 -(id)initWithPermalink:(NSString *)permaLink delegate:(id)delegate{
 	self = [super init];
@@ -56,11 +56,13 @@
 	NSLog(@"Comments loaded.  Comment response is a %@, contents: %@", [outData class], outData);
 	
 	dataDict = [[[[[outData objectAtIndex:0] valueForKey:@"data"] valueForKey:@"children"] objectAtIndex:0] valueForKey:@"data"];
-	/*
-	NSNotification *notification = [NSNotification notificationWithName:@"dataDict loaded" object:dataDict];
+	
+	[self commentArray];
 
-	[[NSNotificationCenter defaultCenter] postNotification:notification];
-	 */
+	[[NSNotificationCenter defaultCenter] 
+	 postNotificationName:@"commentsFetched" 
+	 object:self];
+
 }
 
 -(NSUInteger)count{
@@ -70,11 +72,14 @@
 	if (outData == nil){
 		return nil;
 	}else{
-		NSMutableArray *comments = [[NSMutableArray alloc] init];
+		comments = [[NSMutableArray alloc] init];
 		
-		for (int i = 1; i < [outData count]; i++){
-			NSDictionary *relevantData = [outData objectAtIndex:i];
-			HRDComment *newComment = [[HRDComment alloc] initWithData:relevantData];
+		//Always end with children.
+		NSArray *rawComments = [[[outData objectAtIndex:1]  valueForKey:@"data"] valueForKey:@"children"];
+		
+		for (int i = 0; i < [rawComments count]; i++){
+			NSLog(@"HRDCommentArray generating comment %i/%i.", i, [rawComments objectAtIndex:i]);
+			HRDComment *newComment = [[HRDComment alloc] initWithData:[rawComments objectAtIndex:i]];
 			[comments addObject:newComment];
 		}
 		

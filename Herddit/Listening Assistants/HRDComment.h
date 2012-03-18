@@ -5,9 +5,11 @@
 //  Created by Daniel Finlay on 3/17/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 #import "HRDBareComment.h"
+#import "HRDTopic.h"
+
+@class HRDTopic;
 
 @interface HRDComment : NSObject{
 	
@@ -15,7 +17,7 @@
 	BOOL expanded;
 	
 	NSDictionary *raw_data;
-	NSString *body;
+	NSURL *body;
 	NSString *link_id;
 	NSString *author;
 	NSString *name;
@@ -25,6 +27,7 @@
 	NSMutableArray *replies;
 	
 }
+-(id)initWithTopic:(HRDTopic *)topic;
 -(id)initWithData:(NSDictionary *)data;
 -(NSArray *)bareArray:(int)indent;
 
@@ -33,7 +36,7 @@
 @property (readonly) NSString *link_id;
 @property (readonly) NSString * author;
 @property (readonly) NSString *name;
-@property (readonly) NSString *body;
+@property (readonly) NSURL *body;
 @property (copy) NSMutableArray *replies;
 
 @end

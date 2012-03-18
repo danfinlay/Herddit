@@ -156,8 +156,8 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 	
-	HRDListenViewController *listenViewController =
-	[[HRDListenViewController alloc] init];
+	HRDRiListenViewController *listenViewController =
+	[[HRDRiListenViewController alloc] init];
 	
 	if (indexPath.row > 0) {
 		listenViewController.currentSubreddit =

@@ -21,8 +21,11 @@
 	NSMutableData *receivedData;
 	NSURLConnection *connection;
 	NSArray *outData;
+	
+	NSMutableArray *comments;
 }
 @property (readwrite, retain) NSDictionary *dataDict;
+@property (copy) NSMutableArray *comments;
 
 -(id)initWithPermalink:(NSString *)permaLink delegate:(id)delegate;
 -(NSArray *)commentArray;

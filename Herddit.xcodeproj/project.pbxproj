@@ -68,7 +68,6 @@
 		659BAC2B15151DEB00707D14 /* HRDRiListenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659BAC2915151DEB00707D14 /* HRDRiListenViewController.xib */; };
 		F5E8EB1F150820EE00897848 /* HRDRecordingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E8EB1D150820EE00897848 /* HRDRecordingViewController.m */; };
 		F5E8EB20150820EE00897848 /* HRDRecordingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E8EB1E150820EE00897848 /* HRDRecordingViewController.xib */; };
-		F5E8EB241508213D00897848 /* HRDListenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E8EB221508213D00897848 /* HRDListenViewController.m */; };
 		F5E8EB251508213D00897848 /* HRDListenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E8EB231508213D00897848 /* HRDListenViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -229,8 +228,6 @@
 		F5E8EB1C150820EE00897848 /* HRDRecordingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDRecordingViewController.h; sourceTree = "<group>"; };
 		F5E8EB1D150820EE00897848 /* HRDRecordingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDRecordingViewController.m; sourceTree = "<group>"; };
 		F5E8EB1E150820EE00897848 /* HRDRecordingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRDRecordingViewController.xib; sourceTree = "<group>"; };
-		F5E8EB211508213D00897848 /* HRDListenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDListenViewController.h; path = ../Herddit/HRDListenViewController.h; sourceTree = "<group>"; };
-		F5E8EB221508213D00897848 /* HRDListenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDListenViewController.m; path = ../Herddit/HRDListenViewController.m; sourceTree = "<group>"; };
 		F5E8EB231508213D00897848 /* HRDListenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRDListenViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -315,8 +312,6 @@
 				6525CF9614A26E6B003150DC /* back.png */,
 				6525CF9714A26E6B003150DC /* downvote-blue.png */,
 				6525CF9814A26E6B003150DC /* downvote-grey.png */,
-				6525CF9914A26E6B003150DC /* HRDCommentArray.h */,
-				6525CF9A14A26E6B003150DC /* HRDCommentArray.m */,
 				6525CF9E14A26E6B003150DC /* HRDListView.h */,
 				6525CF9F14A26E6B003150DC /* HRDListView.m */,
 				6525CFA014A26E6B003150DC /* HRDListView.xib */,
@@ -474,6 +469,8 @@
 		659553BD15146B3E00C6FC98 /* Listen View Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6525CF9914A26E6B003150DC /* HRDCommentArray.h */,
+				6525CF9A14A26E6B003150DC /* HRDCommentArray.m */,
 				659BAC2715151DEB00707D14 /* HRDRiListenViewController.h */,
 				659BAC2815151DEB00707D14 /* HRDRiListenViewController.m */,
 				659BAC2915151DEB00707D14 /* HRDRiListenViewController.xib */,
@@ -481,8 +478,6 @@
 				659BAC251515148D00707D14 /* HRDBareComment.m */,
 				659553C815150DD000C6FC98 /* HRDComment.h */,
 				659553C915150DD000C6FC98 /* HRDComment.m */,
-				F5E8EB211508213D00897848 /* HRDListenViewController.h */,
-				F5E8EB221508213D00897848 /* HRDListenViewController.m */,
 				659553B41514640F00C6FC98 /* HRDTopicArray.h */,
 				659553B51514640F00C6FC98 /* HRDTopicArray.m */,
 				659553C115146B9800C6FC98 /* HRDTopic.h */,
@@ -681,7 +676,6 @@
 				6525CFF114A26E83003150DC /* HRDParentViewController.m in Sources */,
 				65345A9F1504A2DF00268E57 /* HRDAudioRecorder.m in Sources */,
 				F5E8EB1F150820EE00897848 /* HRDRecordingViewController.m in Sources */,
-				F5E8EB241508213D00897848 /* HRDListenViewController.m in Sources */,
 				6549D17E151442AB00A00B56 /* HRDRedditPoster.m in Sources */,
 				659553B61514640F00C6FC98 /* HRDTopicArray.m in Sources */,
 				659553C315146B9800C6FC98 /* HRDTopic.m in Sources */,
