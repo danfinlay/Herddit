@@ -306,32 +306,9 @@
 				F5E8EB231508213D00897848 /* HRDListenViewController.xib */,
 				6525CFEA14A26E83003150DC /* HRDAudioStreamer.h */,
 				6525CFEB14A26E83003150DC /* HRDAudioStreamer.m */,
-				6525CFEC14A26E83003150DC /* HRDParentViewController.h */,
-				6525CFED14A26E83003150DC /* HRDParentViewController.m */,
-				6525CFEE14A26E83003150DC /* HRDParentViewController.xib */,
-				6525CF9614A26E6B003150DC /* back.png */,
-				6525CF9714A26E6B003150DC /* downvote-blue.png */,
-				6525CF9814A26E6B003150DC /* downvote-grey.png */,
-				6525CF9E14A26E6B003150DC /* HRDListView.h */,
-				6525CF9F14A26E6B003150DC /* HRDListView.m */,
-				6525CFA014A26E6B003150DC /* HRDListView.xib */,
-				6525CFA114A26E6B003150DC /* HRDLoginViewController.h */,
-				6525CFA214A26E6B003150DC /* HRDLoginViewController.m */,
-				6525CFA314A26E6B003150DC /* HRDLoginViewController.xib */,
-				6525CFA414A26E6B003150DC /* HRDNewSubReddit.h */,
-				6525CFA514A26E6B003150DC /* HRDNewSubReddit.m */,
-				6525CFA614A26E6B003150DC /* HRDNewSubReddit.xib */,
-				6525CFA714A26E6B003150DC /* HRDTextField.h */,
-				6525CFA814A26E6B003150DC /* HRDTextField.m */,
-				6525CFA914A26E6B003150DC /* listView.png */,
-				6525CFAA14A26E6B003150DC /* logo1.png */,
-				6525CFAB14A26E6B003150DC /* next.png */,
-				6525CFAC14A26E6B003150DC /* playpause2.png */,
-				6525CFAD14A26E6B003150DC /* record.png */,
-				6525CFAE14A26E6B003150DC /* skip.png */,
-				6525CFAF14A26E6B003150DC /* skipBack.png */,
-				6525CFC714A26E6B003150DC /* upvote-grey.png */,
-				6525CFC814A26E6B003150DC /* upvote-orange.png */,
+				65D898B01516CCE0002746AF /* Subreddit Classes */,
+				65D898AF1516CCA2002746AF /* Login View Classes */,
+				65D898AE1516CC66002746AF /* Graphics */,
 				6525CF8614A26E19003150DC /* Supporting Files */,
 			);
 			path = Herddit;
@@ -485,6 +462,53 @@
 			);
 			name = "Listen View Classes";
 			path = ../CocoaSoundCloudAPI;
+			sourceTree = "<group>";
+		};
+		65D898AE1516CC66002746AF /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				6525CF9614A26E6B003150DC /* back.png */,
+				6525CF9714A26E6B003150DC /* downvote-blue.png */,
+				6525CF9814A26E6B003150DC /* downvote-grey.png */,
+				6525CFA914A26E6B003150DC /* listView.png */,
+				6525CFAA14A26E6B003150DC /* logo1.png */,
+				6525CFAB14A26E6B003150DC /* next.png */,
+				6525CFAC14A26E6B003150DC /* playpause2.png */,
+				6525CFAD14A26E6B003150DC /* record.png */,
+				6525CFAE14A26E6B003150DC /* skip.png */,
+				6525CFAF14A26E6B003150DC /* skipBack.png */,
+				6525CFC714A26E6B003150DC /* upvote-grey.png */,
+				6525CFC814A26E6B003150DC /* upvote-orange.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		65D898AF1516CCA2002746AF /* Login View Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6525CFEC14A26E83003150DC /* HRDParentViewController.h */,
+				6525CFED14A26E83003150DC /* HRDParentViewController.m */,
+				6525CFEE14A26E83003150DC /* HRDParentViewController.xib */,
+				6525CFA114A26E6B003150DC /* HRDLoginViewController.h */,
+				6525CFA214A26E6B003150DC /* HRDLoginViewController.m */,
+				6525CFA314A26E6B003150DC /* HRDLoginViewController.xib */,
+				6525CFA714A26E6B003150DC /* HRDTextField.h */,
+				6525CFA814A26E6B003150DC /* HRDTextField.m */,
+			);
+			name = "Login View Classes";
+			sourceTree = "<group>";
+		};
+		65D898B01516CCE0002746AF /* Subreddit Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6525CF9E14A26E6B003150DC /* HRDListView.h */,
+				6525CF9F14A26E6B003150DC /* HRDListView.m */,
+				6525CFA014A26E6B003150DC /* HRDListView.xib */,
+				6525CFA414A26E6B003150DC /* HRDNewSubReddit.h */,
+				6525CFA514A26E6B003150DC /* HRDNewSubReddit.m */,
+				6525CFA614A26E6B003150DC /* HRDNewSubReddit.xib */,
+			);
+			name = "Subreddit Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -82,6 +82,10 @@
 	NSArray *rawTopics = [[outData valueForKey:@"data"] valueForKey:@"children"];
 	topics = [[NSMutableArray alloc] init];
 	
+	[[NSUserDefaults standardUserDefaults] setValue:
+	 [[outData valueForKey:@"data"] valueForKey:@"modhash"]
+				forKey:@"modhash"];
+	
 	NSLog(@"Converting topics:");
 	for (int i = 0; i < [rawTopics count]; i++){
 		

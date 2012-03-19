@@ -19,10 +19,15 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         recorder = [[HRDAudioRecorder alloc] init];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recordingPosted:) name:@"recordingPosted" object:nil];
     }
     return self;
 }
-
+-(void)recordingPosted:(NSNotification *)notification{
+	
+	[[self navigationController] popViewControllerAnimated:YES];
+	
+}
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -134,24 +139,21 @@
     replyTo = fullName;
     NSLog(@"Recording view replying to: %@", replyTo);
 }
--(void)setSubRedditId:(NSString *)subRedditId{
-	sub_id = subRedditId;
-	NSLog(@"Subreddit ID posting to: %@", sub_id);
-}
 -(void)setModhash:(NSString*)mod{
 	modhash = mod;
 }
 -(void)postRecording:(NSString *)stream_url{
-	
+	NSLog(@"Post recording called...");
 	redditPoster = [[HRDRedditPoster alloc] init];
 	[redditPoster setModhash:modhash];
 	
 	//If there is no reply string, this is a new post, and so post it:
 	if (replyTo == nil){
-		[redditPoster newPostTo:subReddit_name];
-		[redditPoster post:stream_url toSub:sub_id];
-	}else{	
+		//For now we're appending HRD to the subreddit name.  I hope I don't go to hell for this.  It's just easier than figuring out where I started that whole thing in the first place!
+		NSString *subR = [[NSString alloc] initWithFormat:@"HRD%@", subReddit_name];
+		[redditPoster post:stream_url toSub:subR];
 		//Otherwise this is a reply, so post it:
+	}else{	
 		[redditPoster reply:stream_url toPost:replyTo];
 	}
 	

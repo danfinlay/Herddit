@@ -8,21 +8,27 @@
 
 #import <UIKit/UIKit.h>
 #import "HRDTopicArray.h"
+#import "HRDRecordingViewController.h"
 
-@interface HRDRiListenViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+@interface HRDRiListenViewController : UIViewController 
+	<UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate>{
 	HRDTopicArray *topicArray;
 	NSString *currentSubreddit;
 	
+	NSString *sessionCookie;
 	NSMutableArray *commentQueue;
+	int currentTrack;
 }
 
 -(void)finishedLoading:(NSNotification *)notification;
 -(void)commentQueueReady:(NSNotification *)notification;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (copy) NSString *currentSubreddit;
 
 - (IBAction)recordPressed:(id)sender;
 - (IBAction)skipPressed:(id)sender;
 - (IBAction)playPausePressed:(id)sender;
 - (IBAction)backPressed:(id)sender;
+-(void)mustLoginAlert;
+-(void)recordingPosted:(NSNotification *)notification;
 @end

@@ -17,5 +17,4 @@
 -(void)post:(NSString *) streamUrl toSub:(NSString *)subId;
 -(void)reply:(NSString *) streamUrl toPost:(NSString *)replyTo;
 -(void)setModhash:(NSString*)mod;
--(void)newPostTo:(NSString *)subReddit;
 @end

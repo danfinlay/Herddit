@@ -78,7 +78,7 @@
 		NSArray *rawComments = [[[outData objectAtIndex:1]  valueForKey:@"data"] valueForKey:@"children"];
 		
 		for (int i = 0; i < [rawComments count]; i++){
-			NSLog(@"HRDCommentArray generating comment %i/%i.", i, [rawComments objectAtIndex:i]);
+			NSLog(@"HRDCommentArray generating comment %i/%i.", i, [rawComments count]);
 			HRDComment *newComment = [[HRDComment alloc] initWithData:[rawComments objectAtIndex:i]];
 			[comments addObject:newComment];
 		}

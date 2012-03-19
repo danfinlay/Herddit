@@ -363,7 +363,7 @@
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">HRDRiListenViewController</string>
-					<string key="superclassName">UIViewController</string>
+					<string key="superclassName">UITableViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="backPressed:">id</string>
 						<string key="playPausePressed:">id</string>

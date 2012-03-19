@@ -17,12 +17,18 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+		
+		currentTrack = 0;
+		sessionCookie = [[NSUserDefaults standardUserDefaults] valueForKey:@"sessionCookie"];
+		self.title = NSLocalizedString(currentSubreddit, @"currentSubreddit");
+		
 		topicArray = [[HRDTopicArray alloc] initWithSubreddit:currentSubreddit];
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishedLoading:) name:@"finishedLoading" object:nil];
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(commentQueueReady:) name:@"commentQueueReady" object:nil];
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recordingPosted:) name:@"recordingPosted" object:nil];
     }
     return self;
 }
@@ -37,10 +43,7 @@
 	for(int i = 0; i < [commentQueue count]; i++)
 		NSLog(@"Comment author: %@", [[commentQueue objectAtIndex:i] author]);
 	
-	
 	[tableView reloadData];
-
-	
 }
 -(void)finishedLoading:(NSNotification *)notification{
 	NSLog(@"Finished loading received.  Trying to parse topic array.");
@@ -55,6 +58,11 @@
 	
 	
 	[tableView reloadData];
+}
+
+-(void)recordingPosted:(NSNotification *)notification{
+	topicArray = nil;
+	topicArray = [[HRDTopicArray alloc] initWithSubreddit:currentSubreddit];
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,6 +96,23 @@
 }
 
 - (IBAction)recordPressed:(id)sender {
+	
+  if (sessionCookie !=nil){
+	  
+	  if (currentTrack == 0){
+		  NSLog(@"Record clicked");
+		  UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Record" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Reply", @"New Topic", nil];
+		  [actionSheet showFromRect:self.view.bounds inView:self.view animated:YES];
+		  
+	  }else{
+	  
+    NSLog(@"Record clicked");
+     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Record" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Reply to Current", @"Reply to Previous", @"New Topic", nil];
+    [actionSheet showFromRect:self.view.bounds inView:self.view animated:YES];
+	  }
+  }else{
+	  [self mustLoginAlert];
+	}
 }
 
 - (IBAction)skipPressed:(id)sender {
@@ -120,4 +145,65 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 	return [commentQueue count];
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	currentTrack = indexPath.row;
+	
+}
+
+-(void)mustLoginAlert{
+UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not logged in." 
+	message:@"You must be logged in to do that." 
+	delegate:nil 
+	cancelButtonTitle:@"OK"
+	otherButtonTitles:nil];
+	
+[alert show];
+ 	
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+	 
+	//If track is 0, then no "reply to previous" button was displayed.
+	if (currentTrack == 0){
+		if (buttonIndex == 0){
+			//Reply to Current pressed.
+			HRDRecordingViewController *recordingView = [[HRDRecordingViewController alloc] init];
+			[recordingView setReplyTo:
+			 [[commentQueue objectAtIndex:currentTrack] link_id]];
+			[[self navigationController] pushViewController:recordingView animated:YES];
+		}else if (buttonIndex == 1){
+			//New Topic Pressed.
+			HRDRecordingViewController *recordingView = [[HRDRecordingViewController alloc] init];
+			[recordingView newPostTo:currentSubreddit];
+			[[self navigationController] pushViewController:recordingView animated:YES];
+		}
+		
+		//This represents the regular 3-button option set.
+	}else{
+	if (buttonIndex == 0){
+		//Reply to Current pressed.
+		HRDRecordingViewController *recordingView = [[HRDRecordingViewController alloc] init];
+		[recordingView setReplyTo:
+		 [[commentQueue objectAtIndex:currentTrack] link_id]];
+		[[self navigationController] pushViewController:recordingView animated:YES];
+		
+	}else if (buttonIndex == 1){
+		//Reply to Previous pressed.
+		HRDRecordingViewController *recordingView = [[HRDRecordingViewController alloc] init];
+		if (currentTrack < 0){
+		[recordingView setReplyTo:
+		 [[commentQueue objectAtIndex:currentTrack-1] link_id]];
+			[[self navigationController] pushViewController:recordingView animated:YES];
+		}
+		
+	}else if (buttonIndex == 2){
+		//New Topic Pressed.
+		HRDRecordingViewController *recordingView = [[HRDRecordingViewController alloc] init];
+		[recordingView newPostTo:currentSubreddit];
+		[[self navigationController] pushViewController:recordingView animated:YES];
+	}
+	}
+}
+
 @end

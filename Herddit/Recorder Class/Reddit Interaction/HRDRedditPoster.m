@@ -12,16 +12,16 @@
 
 -(void)post:(NSString *) streamUrl toSub:(NSString *)subId{
 	NSLog(@"Post streamurl to subreddit");
+		modhash = [[NSUserDefaults standardUserDefaults] valueForKey:@"modhash"];
 	
-	NSString *session_id = [[NSUserDefaults standardUserDefaults] valueForKey:@"sessionCookie"];
-	
-	NSString *post = [[NSString alloc] initWithFormat:@"uh=%@&kind=link&sr=%@&title=HerdditPost&r=%@", modhash, subId, subId];
+	NSString *post = [[NSString alloc] initWithFormat:@"title=HerdditPost&url=%@&sr=%@&kind=link&uh=%@", streamUrl, subId, modhash];
+	NSLog(@"Attempting to post new topic with post data: %@", post);
 	
 	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
 	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
 	
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-	[request setURL:[NSURL URLWithString:@"http://www.reddit.com/api/submit"]];
+	[request setURL:[NSURL URLWithString:@"http://www.reddit.com/api/submit/"]];
 	[request setHTTPMethod:@"POST"];
 	[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
 	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -37,12 +37,16 @@
 	
 }
 -(void)reply:(NSString *) streamUrl toPost:(NSString *)replyTo{
-	NSString *post = [[NSString alloc] initWithFormat:@"thing_id=%@&text=%@&uh=%@",	replyTo, streamUrl, modhash];
+
+	modhash = [[NSUserDefaults standardUserDefaults] valueForKey:@"modhash"];
+	
+	NSString *post = [[NSString alloc] initWithFormat:@"parent=%@&text=%@&uh=%@",	replyTo, streamUrl, modhash];
+	NSLog(@"Attempting to post new reply with data: %@", post);
 	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
 	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
 	
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-	[request setURL:[NSURL URLWithString:@"http://www.nowhere.com/sendFormHere.php"]];
+	[request setURL:[NSURL URLWithString:@"http://www.reddit.com/api/comment"]];
 	[request setHTTPMethod:@"POST"];
 	[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
 	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -59,9 +63,6 @@
 }
 -(void)setModhash:(NSString*)mod{
 	modhash = mod;
-}
--(void)newPostTo:(NSString *)subReddit{
-	
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -85,9 +86,10 @@
 	CJSONDeserializer *deserializer = [CJSONDeserializer deserializer];
 	NSError *error = [[NSError alloc] init];
 	outData = [deserializer deserialize:receivedData error:&error];
-	NSLog(@"Received Data class: %@", [receivedData class]);
-	NSLog(@"Error: %@", error);
-	NSLog(@"Data class: %@", [outData class]);
-	NSLog(@"Main Subreddit Data: %@", outData);
+	NSLog(@"Returned post data: %@", outData);
+	
+	[[NSNotificationCenter defaultCenter] 
+	 postNotificationName:@"recordingPosted" 
+	 object:self];
 }
 @end

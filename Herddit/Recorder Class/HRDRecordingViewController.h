@@ -15,11 +15,16 @@
     
     HRDAudioRecorder *recorder;
 
+	//If it's a reply, this string contains the parent's fullname:
     NSString *replyTo;
-	NSString *sub_id;
+	
+	//If it's a new post, this is the subreddit to post to:
+	NSString *subReddit_name;
+	
 	HRDRedditPoster *redditPoster;
 	NSString *modhash;
-	NSString *subReddit_name;
+	NSString *sub_id;
+
     
     BOOL recording;
     BOOL recorded;
@@ -36,10 +41,11 @@
 - (IBAction)postButtonPressed:(id)sender;
 - (IBAction)stopRecordingPressed:(id)sender;
 -(void)newPostTo:(NSString *)subReddit;
--(void)setReplyTo:(NSString *)fullName;
 -(void)setSubRedditId:(NSString *)subRedditId;
 -(void)postRecording:(NSString *)stream_url;
 -(void)setModhash:(NSString*)mod;
+-(void)recordingPosted:(NSNotification *)notification;
+-(void)setReplyTo:(NSString *)fullName;
 
 @property (weak, nonatomic) IBOutlet UIButton *stopRecordingButton;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
