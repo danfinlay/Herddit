@@ -26,21 +26,7 @@
 			currentSubreddit = @"herddit";
 		}
 		
-		NSMutableString *urlString = [[NSMutableString alloc] initWithString:@"http://www.reddit.com/r/HRD"];
-		[urlString appendString:currentSubreddit];
-		[urlString appendString:@".json"];
-		
-		NSURL *url = [[NSURL alloc] initWithString:urlString];
-		NSLog(@"%@", urlString);
-		
-		NSURLRequest *request = [NSURLRequest requestWithURL:url];
-		connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-		if(connection){
-			receivedData = [NSMutableData data];
-		}else{
-			//Inform the user connection failed.  For now, just popping.
-			NSLog(@"Connection failed!  Find a way to inform?");
-		}
+		[self buildCommentQueue];
 		
 		return self;
 	}else{
@@ -110,6 +96,22 @@
 		 object:self];
 	}
 }
-
+-(void)buildCommentQueue{
+	NSMutableString *urlString = [[NSMutableString alloc] initWithString:@"http://www.reddit.com/r/HRD"];
+	[urlString appendString:currentSubreddit];
+	[urlString appendString:@".json"];
+	
+	NSURL *url = [[NSURL alloc] initWithString:urlString];
+	NSLog(@"%@", urlString);
+	
+	NSURLRequest *request = [NSURLRequest requestWithURL:url];
+	connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+	if(connection){
+		receivedData = [NSMutableData data];
+	}else{
+		//Inform the user connection failed.  For now, just popping.
+		NSLog(@"Connection failed!  Find a way to inform?");
+	}
+}
 
 @end

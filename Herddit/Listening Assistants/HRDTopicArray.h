@@ -31,6 +31,7 @@
 }
 -(id)initWithSubreddit:(NSString *)subReddit;
 -(void)parseData:(NSData *)data;
+-(void)buildCommentQueue;
 
 @property (copy) NSMutableArray *topics;
 @property (copy) NSString *currentSubreddit;

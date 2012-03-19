@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HRDTopicArray.h"
 #import "HRDRecordingViewController.h"
+#import "AudioStreamer.h"
 
 @interface HRDRiListenViewController : UIViewController 
 	<UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate>{
@@ -18,6 +19,11 @@
 	NSString *sessionCookie;
 	NSMutableArray *commentQueue;
 	int currentTrack;
+		
+	AudioStreamer *streamer;
+	BOOL paused;
+	NSTimer *progressUpdateTimer;
+	IBOutlet UISlider *progressSlider;
 }
 
 -(void)finishedLoading:(NSNotification *)notification;
@@ -31,4 +37,13 @@
 - (IBAction)backPressed:(id)sender;
 -(void)mustLoginAlert;
 -(void)recordingPosted:(NSNotification *)notification;
+-(void)playTrack;
+
+//Baggage that came with AudioStreamer:
+- (void)createStreamer;
+- (void)destroyStreamer;
+- (void)playbackStateChanged:(NSNotification *)aNotification;
+- (void)updateProgress:(NSTimer *)updatedTimer;
+
+
 @end
