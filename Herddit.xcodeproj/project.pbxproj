@@ -68,6 +68,7 @@
 		659BAC261515148D00707D14 /* HRDBareComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 659BAC251515148D00707D14 /* HRDBareComment.m */; };
 		659BAC2A15151DEB00707D14 /* HRDRiListenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659BAC2815151DEB00707D14 /* HRDRiListenViewController.m */; };
 		659BAC2B15151DEB00707D14 /* HRDRiListenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659BAC2915151DEB00707D14 /* HRDRiListenViewController.xib */; };
+		65F53B091517DE92000CDF50 /* HRDAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F53B081517DE92000CDF50 /* HRDAudioStreamer.m */; };
 		F5E8EB1F150820EE00897848 /* HRDRecordingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E8EB1D150820EE00897848 /* HRDRecordingViewController.m */; };
 		F5E8EB20150820EE00897848 /* HRDRecordingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E8EB1E150820EE00897848 /* HRDRecordingViewController.xib */; };
 		F5E8EB251508213D00897848 /* HRDListenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E8EB231508213D00897848 /* HRDListenViewController.xib */; };
@@ -229,6 +230,8 @@
 		659BAC2715151DEB00707D14 /* HRDRiListenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDRiListenViewController.h; path = "Herddit/Listening Assistants/HRDRiListenViewController.h"; sourceTree = SOURCE_ROOT; };
 		659BAC2815151DEB00707D14 /* HRDRiListenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDRiListenViewController.m; path = "Herddit/Listening Assistants/HRDRiListenViewController.m"; sourceTree = SOURCE_ROOT; };
 		659BAC2915151DEB00707D14 /* HRDRiListenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HRDRiListenViewController.xib; path = "Herddit/Listening Assistants/HRDRiListenViewController.xib"; sourceTree = SOURCE_ROOT; };
+		65F53B071517DE92000CDF50 /* HRDAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDAudioStreamer.h; path = "Herddit/Listening Assistants/HRDAudioStreamer.h"; sourceTree = SOURCE_ROOT; };
+		65F53B081517DE92000CDF50 /* HRDAudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDAudioStreamer.m; path = "Herddit/Listening Assistants/HRDAudioStreamer.m"; sourceTree = SOURCE_ROOT; };
 		F5E8EB1C150820EE00897848 /* HRDRecordingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDRecordingViewController.h; sourceTree = "<group>"; };
 		F5E8EB1D150820EE00897848 /* HRDRecordingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDRecordingViewController.m; sourceTree = "<group>"; };
 		F5E8EB1E150820EE00897848 /* HRDRecordingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRDRecordingViewController.xib; sourceTree = "<group>"; };
@@ -466,6 +469,8 @@
 				659553C115146B9800C6FC98 /* HRDTopic.h */,
 				659553C215146B9800C6FC98 /* HRDTopic.m */,
 				656A29051517110D00C2A6B7 /* AudioStreamer.h */,
+				65F53B071517DE92000CDF50 /* HRDAudioStreamer.h */,
+				65F53B081517DE92000CDF50 /* HRDAudioStreamer.m */,
 				656A29061517110D00C2A6B7 /* AudioStreamer.m */,
 			);
 			name = "Listen View Classes";
@@ -714,6 +719,7 @@
 				659BAC261515148D00707D14 /* HRDBareComment.m in Sources */,
 				659BAC2A15151DEB00707D14 /* HRDRiListenViewController.m in Sources */,
 				656A29071517110D00C2A6B7 /* AudioStreamer.m in Sources */,
+				65F53B091517DE92000CDF50 /* HRDAudioStreamer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

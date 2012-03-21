@@ -34,6 +34,8 @@
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(commentQueueReady:) name:@"commentQueueReady" object:nil];
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recordingPosted:) name:@"recordingPosted" object:nil];
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(streamUrlRetrieved:) name:@"streamUrlRetrieved" object:nil];
     }
     return self;
 }
@@ -223,6 +225,13 @@ UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not logged in."
 	}
 }
 -(void)playTrack{
+	NSLog(@"Playtrack pressed, requesting stream: %@", [[commentQueue objectAtIndex:currentTrack] body]);
+	streamFetcher = [[HRDAudioStreamer alloc] initWithStream:[[commentQueue objectAtIndex:currentTrack] body]];
+}
+-(void)streamUrlRetrieved:(NSNotification *)notification{
+
+	mp3url = [streamFetcher mp3_url];
+	NSLog(@"Mp3 url returned: %@", mp3url);
 	[self createStreamer];
 	[streamer start];
 }
@@ -238,7 +247,7 @@ UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not logged in."
 	NSString *escapedValue =
 	(__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(
 					nil,
-					(__bridge CFStringRef)[[commentQueue objectAtIndex:currentTrack] body],
+					(__bridge CFStringRef)mp3url,
 					NULL,
 					NULL,
 					kCFStringEncodingUTF8);
