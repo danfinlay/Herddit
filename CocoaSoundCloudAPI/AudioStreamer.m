@@ -453,10 +453,7 @@ void ASReadStreamCallBack
 //
 - (void)mainThreadStateNotification
 {
-	NSNotification *notification =
-		[NSNotification
-			notificationWithName:ASStatusChangedNotification
-			object:self];
+d
 	[[NSNotificationCenter defaultCenter]
 		postNotification:notification];
 }
