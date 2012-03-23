@@ -15,8 +15,7 @@
 -(id)initWithComment:(HRDComment *)original andIndentation:(int)indent{
 	if ([super init]!=nil){
 		
-		NSString *requestString = [[NSString alloc] initWithFormat:@"%@.json", [original body]];
-		body = [NSURL URLWithString:requestString];
+		body = [NSURL URLWithString:[original body]];
 		link_id = [original link_id];
 		author = [original author];
 		name = [original name];

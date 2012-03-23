@@ -7,14 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface HRDAudioStreamer : NSObject{
 	
-	
+	AVPlayer *player;
 	
 }
 
 -(void)playStream:(NSURL *)streamURL;
 -(void)pauseStream;
+-(void)resumeStream;
 
 @end

@@ -36,6 +36,7 @@
 		
 		//checking if there are any replies, before parsing them:
 		NSString *test = [raw_data valueForKey:@"replies"];
+		NSLog(@"Test string: %@", test);
 		if([test class] == [raw_data class])
 		{
 			

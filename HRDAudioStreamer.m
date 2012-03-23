@@ -11,10 +11,13 @@
 @implementation HRDAudioStreamer
 
 -(void)playStream:(NSURL *)streamURL{
-	
+	player = [[AVPlayer alloc] initWithURL:streamURL];
+	[player play];
 }
 -(void)pauseStream{
-	
+	[player pause];
 }
-
+-(void)resumeStream{
+	[player play];
+}
 @end
