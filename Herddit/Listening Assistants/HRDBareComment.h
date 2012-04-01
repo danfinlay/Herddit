@@ -16,10 +16,12 @@
 	BOOL expanded;
 	int indentation;
 	
-	NSURL *body;
+	NSString *body;
 	NSString *link_id;
 	NSString *author;
 	NSString *name;
+	
+	int vote;
 	
 	//Maybe THIS is where we'll include the progress bar info...
 }
@@ -31,6 +33,7 @@
 @property (readonly) NSString *link_id;
 @property (readonly) NSString * author;
 @property (readonly) NSString *name;
-@property (readonly) NSURL *body;
+@property (readonly) NSString *body;
+@property (readwrite) int vote;
 
 @end

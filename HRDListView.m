@@ -5,6 +5,8 @@
 //  Created by Daniel Finlay on 11/2/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
+#define UIAppDelegate \
+((HRDAppDelegate *)[UIApplication sharedApplication].delegate)
 
 #import "HRDListView.h"
 
@@ -43,7 +45,7 @@
 		
 		//Stock Subreddit Array:
 		NSArray *stockSubreddits = [[NSArray alloc]
-								initWithObjects:@"herddit", @"funny", @"politics", @"gaming", @"askherddit", @"worldnews", @"audio", @"IAMA", @"TodayILearned", nil];
+								initWithObjects:@"herddit", nil];
 		
 		[defaults setValue:stockSubreddits forKey:@"subReddits"];
 		subRedditArray = [[NSMutableArray alloc] initWithArray:stockSubreddits];
@@ -155,15 +157,18 @@
 	return indexPath;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-	
-	HRDRiListenViewController *listenViewController =
-	[[HRDRiListenViewController alloc] init];
+
+	if ([UIAppDelegate listenViewController] == nil){
+		[UIAppDelegate bootListen];
+	}
 	
 	if (indexPath.row > 0) {
-		listenViewController.currentSubreddit =
-		[subRedditArray objectAtIndex:indexPath.row -1];
+		[[UIAppDelegate listenViewController] setCurrentSubreddit:
+		 
+		 //This is row -1 because I have "Front Page" at the top, although it doesn't really do anything yet... probably should just destroy that, but I'm doing other important things right now.
+		[subRedditArray objectAtIndex:indexPath.row -1]];
 	}
-	[self.navigationController pushViewController:listenViewController animated:YES];
+	[self.navigationController pushViewController:[UIAppDelegate listenViewController] animated:YES];
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
 	

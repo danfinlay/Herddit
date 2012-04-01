@@ -111,5 +111,7 @@
 	}
 }
 
-
+-(void)loadComments{
+	[[topics objectAtIndex:currentTopic] fetchComments];
+}
 @end

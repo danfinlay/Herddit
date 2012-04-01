@@ -11,7 +11,7 @@
 
 @implementation HRDAppDelegate
 
-@synthesize window = _window;
+@synthesize window = _window, listenViewController, player;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -37,7 +37,7 @@
 		loginViewController.usernameField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"redditUser"];
 		loginViewController.passwordField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"redditPassword"];
 		
-		//Next we'll make the second view...  tomorrow.
+		listenViewController = [[HRDRiListenViewController alloc] init];
 	}
 	
 	
@@ -94,4 +94,15 @@
                    redirectURL:[NSURL URLWithString:@"herdit://url"]];
 }
 
+
+-(void)bootListen{
+	listenViewController = [[HRDRiListenViewController alloc] init];
+}
+
+-(void)initPlayerWithUrl:(NSURL *)url{
+	player = [[AVPlayer alloc] initWithURL:url];
+}
+-(void)killPlayer{
+	player = nil;
+}
 @end

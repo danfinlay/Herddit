@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650700B51527919400402328 /* downvote-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 650700B11527919400402328 /* downvote-blue.png */; };
+		650700B61527919400402328 /* downvote-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 650700B21527919400402328 /* downvote-grey.png */; };
+		650700B71527919400402328 /* upvote-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 650700B31527919400402328 /* upvote-grey.png */; };
+		650700B81527919400402328 /* upvote-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 650700B41527919400402328 /* upvote-orange.png */; };
 		6525CF8014A26E19003150DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525CF7F14A26E19003150DC /* UIKit.framework */; };
 		6525CF8214A26E19003150DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525CF8114A26E19003150DC /* Foundation.framework */; };
 		6525CF8414A26E19003150DC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525CF8314A26E19003150DC /* CoreGraphics.framework */; };
 		6525CF8A14A26E19003150DC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6525CF8814A26E19003150DC /* InfoPlist.strings */; };
 		6525CF8C14A26E19003150DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CF8B14A26E19003150DC /* main.m */; };
 		6525CFC914A26E6B003150DC /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CF9614A26E6B003150DC /* back.png */; };
-		6525CFCA14A26E6B003150DC /* downvote-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CF9714A26E6B003150DC /* downvote-blue.png */; };
-		6525CFCB14A26E6B003150DC /* downvote-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CF9814A26E6B003150DC /* downvote-grey.png */; };
 		6525CFCC14A26E6B003150DC /* HRDCommentArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CF9A14A26E6B003150DC /* HRDCommentArray.m */; };
 		6525CFCF14A26E6B003150DC /* HRDListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CF9F14A26E6B003150DC /* HRDListView.m */; };
 		6525CFD014A26E6B003150DC /* HRDListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFA014A26E6B003150DC /* HRDListView.xib */; };
@@ -39,8 +41,6 @@
 		6525CFE314A26E6B003150DC /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFC114A26E6B003150DC /* CJSONDeserializer.m */; };
 		6525CFE414A26E6B003150DC /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFC314A26E6B003150DC /* CJSONScanner.m */; };
 		6525CFE514A26E6B003150DC /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFC514A26E6B003150DC /* CJSONSerializer.m */; };
-		6525CFE614A26E6B003150DC /* upvote-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFC714A26E6B003150DC /* upvote-grey.png */; };
-		6525CFE714A26E6B003150DC /* upvote-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 6525CFC814A26E6B003150DC /* upvote-orange.png */; };
 		6525CFEF14A26E83003150DC /* HRDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFE914A26E83003150DC /* HRDAppDelegate.m */; };
 		6525CFF014A26E83003150DC /* HRDAudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFEB14A26E83003150DC /* HRDAudioStreamer.m */; };
 		6525CFF114A26E83003150DC /* HRDParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6525CFED14A26E83003150DC /* HRDParentViewController.m */; };
@@ -66,6 +66,8 @@
 		659BAC261515148D00707D14 /* HRDBareComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 659BAC251515148D00707D14 /* HRDBareComment.m */; };
 		659BAC2A15151DEB00707D14 /* HRDRiListenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659BAC2815151DEB00707D14 /* HRDRiListenViewController.m */; };
 		659BAC2B15151DEB00707D14 /* HRDRiListenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659BAC2915151DEB00707D14 /* HRDRiListenViewController.xib */; };
+		65FCCFF41527F36100F3F699 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FCCFF31527F36100F3F699 /* CoreMedia.framework */; };
+		65FCCFF71528132C00F3F699 /* HRDRedditVoter.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FCCFF61528132C00F3F699 /* HRDRedditVoter.m */; };
 		F5E8EB1F150820EE00897848 /* HRDRecordingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E8EB1D150820EE00897848 /* HRDRecordingViewController.m */; };
 		F5E8EB20150820EE00897848 /* HRDRecordingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E8EB1E150820EE00897848 /* HRDRecordingViewController.xib */; };
 		F5E8EB251508213D00897848 /* HRDListenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E8EB231508213D00897848 /* HRDListenViewController.xib */; };
@@ -138,6 +140,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		650700B11527919400402328 /* downvote-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downvote-blue.png"; sourceTree = "<group>"; };
+		650700B21527919400402328 /* downvote-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downvote-grey.png"; sourceTree = "<group>"; };
+		650700B31527919400402328 /* upvote-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upvote-grey.png"; sourceTree = "<group>"; };
+		650700B41527919400402328 /* upvote-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upvote-orange.png"; sourceTree = "<group>"; };
 		6525CF7B14A26E19003150DC /* Herddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Herddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6525CF7F14A26E19003150DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6525CF8114A26E19003150DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -147,8 +153,6 @@
 		6525CF8B14A26E19003150DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6525CF8D14A26E19003150DC /* Herddit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Herddit-Prefix.pch"; sourceTree = "<group>"; };
 		6525CF9614A26E6B003150DC /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../back.png; sourceTree = "<group>"; };
-		6525CF9714A26E6B003150DC /* downvote-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "downvote-blue.png"; path = "../downvote-blue.png"; sourceTree = "<group>"; };
-		6525CF9814A26E6B003150DC /* downvote-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "downvote-grey.png"; path = "../downvote-grey.png"; sourceTree = "<group>"; };
 		6525CF9914A26E6B003150DC /* HRDCommentArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDCommentArray.h; path = ../HRDCommentArray.h; sourceTree = "<group>"; };
 		6525CF9A14A26E6B003150DC /* HRDCommentArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDCommentArray.m; path = ../HRDCommentArray.m; sourceTree = "<group>"; };
 		6525CF9E14A26E6B003150DC /* HRDListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDListView.h; path = ../HRDListView.h; sourceTree = "<group>"; };
@@ -188,8 +192,6 @@
 		6525CFC414A26E6B003150DC /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
 		6525CFC514A26E6B003150DC /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
 		6525CFC614A26E6B003150DC /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
-		6525CFC714A26E6B003150DC /* upvote-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "upvote-grey.png"; path = "../upvote-grey.png"; sourceTree = "<group>"; };
-		6525CFC814A26E6B003150DC /* upvote-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "upvote-orange.png"; path = "../upvote-orange.png"; sourceTree = "<group>"; };
 		6525CFE814A26E83003150DC /* HRDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDAppDelegate.h; path = ../HRDAppDelegate.h; sourceTree = "<group>"; };
 		6525CFE914A26E83003150DC /* HRDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDAppDelegate.m; path = ../HRDAppDelegate.m; sourceTree = "<group>"; };
 		6525CFEA14A26E83003150DC /* HRDAudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDAudioStreamer.h; path = ../HRDAudioStreamer.h; sourceTree = "<group>"; };
@@ -225,6 +227,9 @@
 		659BAC2715151DEB00707D14 /* HRDRiListenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDRiListenViewController.h; path = "Herddit/Listening Assistants/HRDRiListenViewController.h"; sourceTree = SOURCE_ROOT; };
 		659BAC2815151DEB00707D14 /* HRDRiListenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDRiListenViewController.m; path = "Herddit/Listening Assistants/HRDRiListenViewController.m"; sourceTree = SOURCE_ROOT; };
 		659BAC2915151DEB00707D14 /* HRDRiListenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HRDRiListenViewController.xib; path = "Herddit/Listening Assistants/HRDRiListenViewController.xib"; sourceTree = SOURCE_ROOT; };
+		65FCCFF31527F36100F3F699 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		65FCCFF51528132B00F3F699 /* HRDRedditVoter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRDRedditVoter.h; path = ../../HRDRedditVoter.h; sourceTree = "<group>"; };
+		65FCCFF61528132C00F3F699 /* HRDRedditVoter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRDRedditVoter.m; path = ../../HRDRedditVoter.m; sourceTree = "<group>"; };
 		F5E8EB1C150820EE00897848 /* HRDRecordingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRDRecordingViewController.h; sourceTree = "<group>"; };
 		F5E8EB1D150820EE00897848 /* HRDRecordingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRDRecordingViewController.m; sourceTree = "<group>"; };
 		F5E8EB1E150820EE00897848 /* HRDRecordingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRDRecordingViewController.xib; sourceTree = "<group>"; };
@@ -236,6 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65FCCFF41527F36100F3F699 /* CoreMedia.framework in Frameworks */,
 				6525CFF414A26EA4003150DC /* AVFoundation.framework in Frameworks */,
 				6525D04B14A2757D003150DC /* Security.framework in Frameworks */,
 				6525D04814A27574003150DC /* CoreLocation.framework in Frameworks */,
@@ -283,6 +289,7 @@
 		6525CF7E14A26E19003150DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65FCCFF31527F36100F3F699 /* CoreMedia.framework */,
 				6525D04A14A2757D003150DC /* Security.framework */,
 				6525D04614A27574003150DC /* CoreLocation.framework */,
 				6525D04714A27574003150DC /* CoreText.framework */,
@@ -300,8 +307,11 @@
 		6525CF8514A26E19003150DC /* Herddit */ = {
 			isa = PBXGroup;
 			children = (
-				659553BD15146B3E00C6FC98 /* Listen View Classes */,
+				6549D17B151442AB00A00B56 /* Reddit Interaction */,
 				65345A9C1504A2DF00268E57 /* Recorder Class */,
+				6525CFE814A26E83003150DC /* HRDAppDelegate.h */,
+				6525CFE914A26E83003150DC /* HRDAppDelegate.m */,
+				659553BD15146B3E00C6FC98 /* Listen View Classes */,
 				6525D04C14A27624003150DC /* SoundCloud.bundle */,
 				F5E8EB231508213D00897848 /* HRDListenViewController.xib */,
 				6525CFEA14A26E83003150DC /* HRDAudioStreamer.h */,
@@ -328,8 +338,6 @@
 		6525CFB014A26E6B003150DC /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				6525CFE814A26E83003150DC /* HRDAppDelegate.h */,
-				6525CFE914A26E83003150DC /* HRDAppDelegate.m */,
 				6525CFB114A26E6B003150DC /* CDataScanner.h */,
 				6525CFB214A26E6B003150DC /* CDataScanner.m */,
 				6525CFB314A26E6B003150DC /* Experimental */,
@@ -424,7 +432,6 @@
 		65345A9C1504A2DF00268E57 /* Recorder Class */ = {
 			isa = PBXGroup;
 			children = (
-				6549D17B151442AB00A00B56 /* Reddit Interaction */,
 				F5E8EB1C150820EE00897848 /* HRDRecordingViewController.h */,
 				F5E8EB1D150820EE00897848 /* HRDRecordingViewController.m */,
 				F5E8EB1E150820EE00897848 /* HRDRecordingViewController.xib */,
@@ -437,10 +444,13 @@
 		6549D17B151442AB00A00B56 /* Reddit Interaction */ = {
 			isa = PBXGroup;
 			children = (
+				65FCCFF51528132B00F3F699 /* HRDRedditVoter.h */,
+				65FCCFF61528132C00F3F699 /* HRDRedditVoter.m */,
 				6549D17C151442AB00A00B56 /* HRDRedditPoster.h */,
 				6549D17D151442AB00A00B56 /* HRDRedditPoster.m */,
 			);
-			path = "Reddit Interaction";
+			name = "Reddit Interaction";
+			path = "Recorder Class/Reddit Interaction";
 			sourceTree = "<group>";
 		};
 		659553BD15146B3E00C6FC98 /* Listen View Classes */ = {
@@ -467,9 +477,11 @@
 		65D898AE1516CC66002746AF /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				650700B11527919400402328 /* downvote-blue.png */,
+				650700B21527919400402328 /* downvote-grey.png */,
+				650700B31527919400402328 /* upvote-grey.png */,
+				650700B41527919400402328 /* upvote-orange.png */,
 				6525CF9614A26E6B003150DC /* back.png */,
-				6525CF9714A26E6B003150DC /* downvote-blue.png */,
-				6525CF9814A26E6B003150DC /* downvote-grey.png */,
 				6525CFA914A26E6B003150DC /* listView.png */,
 				6525CFAA14A26E6B003150DC /* logo1.png */,
 				6525CFAB14A26E6B003150DC /* next.png */,
@@ -477,8 +489,6 @@
 				6525CFAD14A26E6B003150DC /* record.png */,
 				6525CFAE14A26E6B003150DC /* skip.png */,
 				6525CFAF14A26E6B003150DC /* skipBack.png */,
-				6525CFC714A26E6B003150DC /* upvote-grey.png */,
-				6525CFC814A26E6B003150DC /* upvote-orange.png */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -651,8 +661,6 @@
 			files = (
 				6525CF8A14A26E19003150DC /* InfoPlist.strings in Resources */,
 				6525CFC914A26E6B003150DC /* back.png in Resources */,
-				6525CFCA14A26E6B003150DC /* downvote-blue.png in Resources */,
-				6525CFCB14A26E6B003150DC /* downvote-grey.png in Resources */,
 				6525CFD014A26E6B003150DC /* HRDListView.xib in Resources */,
 				6525CFD214A26E6B003150DC /* HRDLoginViewController.xib in Resources */,
 				6525CFD414A26E6B003150DC /* HRDNewSubReddit.xib in Resources */,
@@ -663,13 +671,15 @@
 				6525CFDA14A26E6B003150DC /* record.png in Resources */,
 				6525CFDB14A26E6B003150DC /* skip.png in Resources */,
 				6525CFDC14A26E6B003150DC /* skipBack.png in Resources */,
-				6525CFE614A26E6B003150DC /* upvote-grey.png in Resources */,
-				6525CFE714A26E6B003150DC /* upvote-orange.png in Resources */,
 				6525CFF214A26E83003150DC /* HRDParentViewController.xib in Resources */,
 				6525D04D14A27624003150DC /* SoundCloud.bundle in Resources */,
 				F5E8EB20150820EE00897848 /* HRDRecordingViewController.xib in Resources */,
 				F5E8EB251508213D00897848 /* HRDListenViewController.xib in Resources */,
 				659BAC2B15151DEB00707D14 /* HRDRiListenViewController.xib in Resources */,
+				650700B51527919400402328 /* downvote-blue.png in Resources */,
+				650700B61527919400402328 /* downvote-grey.png in Resources */,
+				650700B71527919400402328 /* upvote-grey.png in Resources */,
+				650700B81527919400402328 /* upvote-orange.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +716,7 @@
 				659553CA15150DD000C6FC98 /* HRDComment.m in Sources */,
 				659BAC261515148D00707D14 /* HRDBareComment.m in Sources */,
 				659BAC2A15151DEB00707D14 /* HRDRiListenViewController.m in Sources */,
+				65FCCFF71528132C00F3F699 /* HRDRedditVoter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

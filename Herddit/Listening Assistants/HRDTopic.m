@@ -20,7 +20,11 @@
 		title = [dataDict valueForKey:@"title"];
 		real_id = [dataDict valueForKey:@"name"];
 		poster_name = [dataDict valueForKey:@"author"];
-		url = [dataDict valueForKey:@"url"];
+		
+		
+		url = [NSString stringWithFormat:@"%@%@",[dataDict valueForKey:@"url"], @"?client_id=4c65f6b723a93defa57007fc8d0ebc44"];
+		
+		
 		subreddit = [dataDict valueForKey:@"subreddit"];
 		subreddit_id = [dataDict valueForKey:@"subreddit_id"];
 		commentCount = [[dataDict valueForKey:@"num_comments"] intValue];

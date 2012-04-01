@@ -10,12 +10,12 @@
 
 @implementation HRDBareComment
 
-@synthesize expanded, indentation, link_id, author, name, body;
+@synthesize expanded, indentation, link_id, author, name, body, vote;
 
 -(id)initWithComment:(HRDComment *)original andIndentation:(int)indent{
 	if ([super init]!=nil){
-		
-		body = [NSURL URLWithString:[original body]];
+		vote = 0;
+		body = [NSString stringWithFormat:@"%@%@",original.body, @"?client_id=4c65f6b723a93defa57007fc8d0ebc44"];		
 		link_id = [original link_id];
 		author = [original author];
 		name = [original name];

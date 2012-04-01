@@ -10,9 +10,22 @@
 #import "HRDParentViewController.h"
 #import "HRDLoginViewController.h"
 #import "SCUI.h"
+#import <AVFoundation/AVFoundation.h>
+#import "HRDRiListenViewController.h"
 
-@interface HRDAppDelegate : UIResponder <UIApplicationDelegate>
 
+@class HRDRiListenViewController;
+
+@interface HRDAppDelegate : UIResponder <UIApplicationDelegate>{
+	HRDRiListenViewController *listenViewController;
+	AVPlayer *player;
+}
+
+-(void)bootListen;
+-(void)initPlayerWithUrl:(NSURL *)url;
+-(void)killPlayer;
+@property (readwrite, retain) AVPlayer *player;
+@property (readwrite, retain) HRDRiListenViewController *listenViewController;
 @property (strong, nonatomic) UIWindow *window;
 
 

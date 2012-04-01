@@ -1,21 +1,42 @@
 //
-//  HRDRedditPoster.m
+//  HRDRedditVoter.m
 //  Herddit
 //
-//  Created by Daniel Finlay on 3/14/12.
+//  Created by Daniel Finlay on 3/31/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "HRDRedditPoster.h"
+#import "HRDRedditVoter.h"
 
-@implementation HRDRedditPoster
-
--(void)post:(NSString *) streamUrl toSub:(NSString *)subId{
-	NSLog(@"Post streamurl to subreddit");
+@implementation HRDRedditVoter
+-(id)init{
+	if ([super init] != nil){
+		
 		modhash = [[NSUserDefaults standardUserDefaults] valueForKey:@"modhash"];
+		return self;
+	}else{
+		return nil;
+	}
+}
+-(void)upVote:(HRDBareComment *)comment{
+	theComment = comment;
+	[self vote:1];
+}
+-(void)downVote:(HRDBareComment *)comment{
+	theComment = comment;
+	[self vote:-1];
+}
+-(void)unVote:(HRDBareComment *)comment{
+	theComment = comment;
+	[self vote:0];
+}
+-(void)vote:(int)dir{
 	
-	NSString *post = [[NSString alloc] initWithFormat:@"title=HerdditPost&url=%@&sr=%@&kind=link&uh=%@&reddit_session=%@", streamUrl, subId, modhash, [[NSUserDefaults standardUserDefaults] valueForKey:@"sessionCookie"]];
-	NSLog(@"Attempting to post new topic with post data: %@", post);
+	NSLog(@"Post streamurl to subreddit");
+	modhash = [[NSUserDefaults standardUserDefaults] valueForKey:@"modhash"];
+	
+	NSString *post = [[NSString alloc] initWithFormat:@"id=%@&dir=%i&uh=%@", theComment.link_id, dir, modhash];
+	NSLog(@"Attempting to vote on topic with: %@", post);
 	
 	NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
 	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
@@ -32,12 +53,13 @@
 		receivedData = [NSMutableData data];
 	}else{
 		//Inform the user connection failed.  For now, just popping.
-		NSLog(@"Error with HRDRedditPoster");
+		NSLog(@"Error with HRDRedditVoter");
 	}
+	
 	
 }
 -(void)reply:(NSString *) streamUrl toPost:(NSString *)replyTo{
-
+	
 	modhash = [[NSUserDefaults standardUserDefaults] valueForKey:@"modhash"];
 	
 	NSString *post = [[NSString alloc] initWithFormat:@"parent=%@&text=%@&uh=%@",	replyTo, streamUrl, modhash];
@@ -86,10 +108,7 @@
 	CJSONDeserializer *deserializer = [CJSONDeserializer deserializer];
 	NSError *error = [[NSError alloc] init];
 	outData = [deserializer deserialize:receivedData error:&error];
-	NSLog(@"Returned post data: %@", outData);
-	
-	[[NSNotificationCenter defaultCenter] 
-	 postNotificationName:@"recordingPosted" 
-	 object:self];
+	NSLog(@"Returned vote data: %@", outData);
+
 }
 @end

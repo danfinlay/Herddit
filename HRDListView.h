@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HRDNewSubReddit.h"
 #import "HRDRiListenViewController.h"
+#import "HRDAppDelegate.h"
 
 @interface HRDListView : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate>{
 	NSMutableArray *subRedditArray;

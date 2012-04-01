@@ -9,6 +9,11 @@
 #import "HRDRiListenViewController.h"
 
 @implementation HRDRiListenViewController
+@synthesize currentTimeLabel;
+@synthesize durationLabel;
+@synthesize upVoteButton;
+@synthesize downVoteButton;
+@synthesize slider;
 @synthesize tableView, currentSubreddit;
 
 
@@ -18,11 +23,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 		
-		currentTrack = 0;
 		sessionCookie = [[NSUserDefaults standardUserDefaults] valueForKey:@"sessionCookie"];
 		self.title = NSLocalizedString(currentSubreddit, @"currentSubreddit");
 		
 		topicArray = [[HRDTopicArray alloc] initWithSubreddit:currentSubreddit];
+		voter = [[HRDRedditVoter alloc] init];
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishedLoading:) name:@"finishedLoading" object:nil];
 		
@@ -44,7 +49,24 @@
 		NSLog(@"Comment author: %@", [[commentQueue objectAtIndex:i] author]);
 	
 	[tableView reloadData];
+
+	currentSelection = [NSIndexPath indexPathForRow:0 inSection:0];
+	currentTrack = currentSelection.row;
+
+	NSLog(@"Loading completed.  Requesting stream to begin.");
+	[self restartStream];
+	
 }
+- (IBAction)sliderChanged:(id)sender {
+	if (player != nil){
+		
+		
+		
+		[player seekToTime:CMTimeMakeWithSeconds([slider value], 1)];
+		 }
+
+}
+
 -(void)finishedLoading:(NSNotification *)notification{
 	NSLog(@"Finished loading received.  Trying to parse topic array.");
 	
@@ -57,13 +79,13 @@
 			  [[commentQueue objectAtIndex:i] indentation]);
 	
 	[tableView reloadData];
-	player = [[AVPlayer alloc] initWithURL:[[commentQueue objectAtIndex:currentTrack] body]];
 	
+
 }
 
 -(void)recordingPosted:(NSNotification *)notification{
-	topicArray = nil;
-	topicArray = [[HRDTopicArray alloc] initWithSubreddit:currentSubreddit];
+	
+	[[topicArray.topics objectAtIndex:topicArray.currentTopic] fetchComments];
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,6 +107,12 @@
 - (void)viewDidUnload
 {
 	[self setTableView:nil];
+	upVoteButton = nil;
+	[self setUpVoteButton:nil];
+	[self setDownVoteButton:nil];
+	[self setSlider:nil];
+	[self setCurrentTimeLabel:nil];
+	[self setDurationLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -94,6 +122,36 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (IBAction)downVotePressed:(id)sender {
+	if ([[commentQueue objectAtIndex:currentSelection.row] vote] != -1){
+		[voter downVote:[commentQueue objectAtIndex:currentSelection.row]];
+		UIImage *downVoteImage = [[UIImage alloc] initWithContentsOfFile:@"downvote-blue.png"];
+		[downVoteButton setImage:downVoteImage forState:UIControlStateNormal];
+		
+		UIImage *upVoteImage = [[UIImage alloc] initWithContentsOfFile:@"upvote-grey.png"];
+		[upVoteButton setImage:upVoteImage forState:UIControlStateNormal];
+	}else {
+		[voter unVote:[commentQueue objectAtIndex:currentSelection.row]];
+		UIImage *voteImage = [[UIImage alloc] initWithContentsOfFile:@"downvote-grey.png"];
+		[downVoteButton setImage:voteImage forState:UIControlStateNormal];
+	}
+}
+
+- (IBAction)upVotePressed:(id)sender {
+	if ([[commentQueue objectAtIndex:currentSelection.row] vote] != 1){
+		[voter upVote:[commentQueue objectAtIndex:currentSelection.row]];
+		UIImage *upVoteImage = [[UIImage alloc] initWithContentsOfFile:@"upvote-orange.png"];
+		[upVoteButton setImage:upVoteImage forState:UIControlStateNormal];
+		
+		UIImage *downVoteGrey = [[UIImage alloc] initWithContentsOfFile:@"downvote-grey.png"];
+		[downVoteButton setImage:downVoteGrey forState:UIControlStateNormal];
+	}else {
+		[voter unVote:[commentQueue objectAtIndex:currentSelection.row]];
+		UIImage *voteImage = [[UIImage alloc] initWithContentsOfFile:@"upvote-grey.png"];
+		[upVoteButton setImage:voteImage forState:UIControlStateNormal];
+	}
 }
 
 - (IBAction)recordPressed:(id)sender {
@@ -117,7 +175,13 @@
 }
 
 - (IBAction)skipPressed:(id)sender {
-
+	[player pause];
+	//If there are topics left in this subreddit:
+	if (topicArray.currentTopic+1<[topicArray.topics count]){
+		topicArray.currentTopic++;
+		[topicArray loadComments];
+	//If there aren't:	
+	}
 }
 
 - (IBAction)playPausePressed:(id)sender {
@@ -156,14 +220,119 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	NSLog(@"Index path selected: %i.\nAttempting to play from commentQueue of %i.", indexPath.row, [commentQueue count]);
 	currentTrack = indexPath.row;
 	[self restartStream];
 }
 -(void)restartStream{
+	
+	//Highlight the correct item:
+	[tableView selectRowAtIndexPath:currentSelection animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+	
+	
+	NSLog(@"Restart stream called.");
 	player = nil;
-	player = [[AVPlayer alloc] initWithURL:[[commentQueue objectAtIndex:currentTrack] body]];
+	NSLog(@"Player cleared.");
+	
+	
+	[slider setValue:0.0 animated:NO];
+	
+	NSString *originalUrl = [[commentQueue objectAtIndex:currentTrack] body];
+	NSString *theLetterS = [[NSString alloc] initWithString:@"s"];
+	//Identify if this is an https connection, if it is, we need to cut off the "s" before sending it to the AVPlayer.  This works for SoundCloud, I hope it works in all cases :)
+	if([originalUrl characterAtIndex:4] == [theLetterS characterAtIndex:0]){
+		//Cut off the s
+		NSString *newString = [[NSString alloc] initWithFormat:@"%@%@", [originalUrl substringToIndex:4], [originalUrl substringFromIndex:5]];
+		originalUrl = newString;
+	}
+	
+	NSLog(@"Attempting to stream %@", originalUrl);
+	player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:originalUrl]];
+	
+	NSLog(@"Player initialized.  Status: %@", [player status]);
 	[player play];
+	NSLog(@"Player asked to play.  Status: %@",[player status]);
 	isPlaying = YES;
+	
+	//The following deals with the slider and its time labels:
+//	NSString *timeDescription = (__bridge NSString *)CMTimeCopyDescription(NULL, [player currentTime]);
+//	durationLabel.text = timeDescription;
+	
+	duration = CMTimeGetSeconds(player.currentItem.asset.duration);
+	slider.maximumValue = duration;
+	int minutes = round(duration/60);
+	int seconds = round(duration-(minutes * 60));
+
+	NSString *minuteString;
+	NSString *secondString;
+	if (minutes < 10){
+		minuteString = [[NSString alloc] initWithFormat:@"0%i", minutes];
+	}else{
+		minuteString = [[NSString alloc] initWithFormat:@"%i", minutes];
+	}
+	if (seconds < 10){
+		secondString = [[NSString alloc] initWithFormat:@"0%i", seconds];
+	}else{
+		secondString = [[NSString alloc] initWithFormat:@"%i", seconds];
+	}		
+	NSString *currentTimeString = [[NSString alloc] initWithFormat:@"%@:%@",minuteString, secondString];
+	durationLabel.text = currentTimeString;
+
+	playerObserver = [player addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(1.0, 1) queue:NULL usingBlock:^(CMTime time){
+		
+		progress = CMTimeGetSeconds([player currentTime]);
+		
+		if (progress >= duration){
+			if (skippable == YES){
+				skippable = NO;
+				NSLog(@"Track %i ended.  Calling next.", currentTrack);
+				[self nextComment];
+			}
+		}else{
+		skippable = YES;
+		progress = CMTimeGetSeconds(time);
+		[slider setValue:progress animated:YES];
+		int minutes = round(progress/60);
+		int seconds = round(progress-(minutes * 60));
+		
+		NSString *minuteString;
+		NSString *secondString;
+		if (minutes < 10){
+			minuteString = [[NSString alloc] initWithFormat:@"0%i", minutes];
+		}else{
+			minuteString = [[NSString alloc] initWithFormat:@"%i", minutes];
+		}
+		if (seconds < 10){
+			secondString = [[NSString alloc] initWithFormat:@"0%i", seconds];
+		}else{
+			secondString = [[NSString alloc] initWithFormat:@"%i", seconds];
+		}		
+		NSString *currentTimeString = [[NSString alloc] initWithFormat:@"%@:%@",minuteString, secondString];
+		currentTimeLabel.text = currentTimeString;
+		}
+		
+	}];
+	
+//		
+//	//Notification for the end of the track:
+//	[[NSNotificationCenter defaultCenter] 
+//	 addObserver:self
+//	 selector:@selector(trackEnded:)
+//	 name:AVPlayerItemDidPlayToEndTimeNotification 
+//	 object:player];
+	
+}
+-(void)nextComment{
+	[tableView deselectRowAtIndexPath:currentSelection animated:YES];
+	
+	if (currentTrack + 1 < [commentQueue count]){
+		currentTrack++;
+		NSIndexPath *newPath = [NSIndexPath indexPathForRow:currentSelection.row + 1 inSection:0];
+		currentSelection = newPath;
+		[self restartStream];
+	}else{
+		[self skipPressed:nil];
+	}
 }
 
 -(void)mustLoginAlert{

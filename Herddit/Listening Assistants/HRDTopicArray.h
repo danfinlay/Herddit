@@ -30,6 +30,7 @@
 	NSArray *commentQueue;
 }
 -(id)initWithSubreddit:(NSString *)subReddit;
+-(void)loadComments;
 -(void)parseData:(NSData *)data;
 
 @property (copy) NSMutableArray *topics;

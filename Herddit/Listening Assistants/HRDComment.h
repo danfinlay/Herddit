@@ -17,7 +17,7 @@
 	BOOL expanded;
 	
 	NSDictionary *raw_data;
-	NSURL *body;
+	NSString *body;
 	NSString *link_id;
 	NSString *author;
 	NSString *name;
@@ -36,7 +36,7 @@
 @property (readonly) NSString *link_id;
 @property (readonly) NSString * author;
 @property (readonly) NSString *name;
-@property (readonly) NSURL *body;
+@property (readonly) NSString *body;
 @property (copy) NSMutableArray *replies;
 
 @end
